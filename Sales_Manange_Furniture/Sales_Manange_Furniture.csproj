@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{76201640-5364-4575-8B93-7EDDBBFD01AF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Sales_Manange_Furniture</RootNamespace>
+    <AssemblyName>Sales_Manange_Furniture</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="config\DBConnectcs.cs" />
+    <Compile Include="controllers\LoginController.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mainform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mainform.Designer.cs">
+      <DependentUpon>Mainform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\QuanLyNoiThatDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyNoiThatDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="models\ChiTietHDB.cs" />
+    <Compile Include="models\HoaDon.cs" />
+    <Compile Include="models\KhachHang.cs" />
+    <Compile Include="models\NhanVien.cs" />
+    <Compile Include="models\SanPham.cs" />
+    <Compile Include="models\TaiKhoan.cs" />
+    <Compile Include="views\FAddKhachHangcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FAddKhachHangcs.Designer.cs">
+      <DependentUpon>FAddKhachHangcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FNhanVien.Designer.cs">
+      <DependentUpon>FNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FEditKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FEditKhachHang.Designer.cs">
+      <DependentUpon>FEditKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\Sidebar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\Sidebar.Designer.cs">
+      <DependentUpon>Sidebar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\Topbar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\Topbar.Designer.cs">
+      <DependentUpon>Topbar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FLogin.Designer.cs">
+      <DependentUpon>FLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FWelcome.Designer.cs">
+      <DependentUpon>FWelcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="views\UCBanHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\UCBanHang.Designer.cs">
+      <DependentUpon>UCBanHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\UCHoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\UCHoaDon.Designer.cs">
+      <DependentUpon>UCHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\UCKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\UCKhachHang.Designer.cs">
+      <DependentUpon>UCKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\UCSanPham.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\UCSanPham.Designer.cs">
+      <DependentUpon>UCSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\UCThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\UCThongKe.Designer.cs">
+      <DependentUpon>UCThongKe.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Mainform.resx">
+      <DependentUpon>Mainform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FAddKhachHangcs.resx">
+      <DependentUpon>FAddKhachHangcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FNhanVien.resx">
+      <DependentUpon>FNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FEditKhachHang.resx">
+      <DependentUpon>FEditKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Sidebar.resx">
+      <DependentUpon>Sidebar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Topbar.resx">
+      <DependentUpon>Topbar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FLogin.resx">
+      <DependentUpon>FLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FWelcome.resx">
+      <DependentUpon>FWelcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="views\UCBanHang.resx">
+      <DependentUpon>UCBanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\UCHoaDon.resx">
+      <DependentUpon>UCHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\UCKhachHang.resx">
+      <DependentUpon>UCKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\UCSanPham.resx">
+      <DependentUpon>UCSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\UCThongKe.resx">
+      <DependentUpon>UCThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="ADO\QuanLyNoiThatDataSet.xsc">
+      <DependentUpon>QuanLyNoiThatDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ADO\QuanLyNoiThatDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyNoiThatDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ADO\QuanLyNoiThatDataSet.xss">
+      <DependentUpon>QuanLyNoiThatDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="images\pos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\tactical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\thongke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\sanpham.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\avatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\armchair coffee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\4e80d9de-5ed3-4ee7-8d66-5903f4dc7466.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\thongkeden.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\customerden.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\tacticalden.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\posden.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\sanphamden.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\iconsearch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\search 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
