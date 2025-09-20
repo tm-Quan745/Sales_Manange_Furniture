@@ -1,4 +1,4 @@
-﻿namespace Sales_Manage_Furniture
+﻿namespace Sales_Manage_Furniture.views
 {
     partial class FWelcome
     {

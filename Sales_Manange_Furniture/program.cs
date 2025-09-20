@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sales_Manage_Furniture.views;
 using Sales_Manange_Furniture.views;
 
 
@@ -17,8 +18,8 @@ namespace Sales_Manage_Furniture
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FWelcome());
+            Application.SetCompatibleTextRenderingDefault(false);   
+            Application.Run(new FQuanLy());
         }
     }
 }

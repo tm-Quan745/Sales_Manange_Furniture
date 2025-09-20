@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Sales_Manange_Furniture.views
+namespace Sales_Manage_Furniture.views
 {
     public partial class FEditKhachHang : Form
     {
@@ -38,6 +38,11 @@ namespace Sales_Manange_Furniture.views
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FEditKhachHang_Load(object sender, EventArgs e)
         {
 
         }

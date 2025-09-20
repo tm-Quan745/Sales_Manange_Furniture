@@ -50,7 +50,7 @@
             this.txt_Tim.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_Tim.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_Tim.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_Tim.Location = new System.Drawing.Point(83, 77);
+            this.txt_Tim.Location = new System.Drawing.Point(123, 75);
             this.txt_Tim.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_Tim.Name = "txt_Tim";
             this.txt_Tim.PlaceholderText = "Tìm kiếm mã sản phẩm";
@@ -81,7 +81,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_KhachHang.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_KhachHang.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgv_KhachHang.Location = new System.Drawing.Point(83, 164);
+            this.dgv_KhachHang.Location = new System.Drawing.Point(123, 180);
             this.dgv_KhachHang.Name = "dgv_KhachHang";
             this.dgv_KhachHang.RowHeadersVisible = false;
             this.dgv_KhachHang.RowHeadersWidth = 51;
@@ -123,7 +123,7 @@
             this.btn_Huy.FillColor = System.Drawing.Color.White;
             this.btn_Huy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Huy.ForeColor = System.Drawing.Color.Red;
-            this.btn_Huy.Location = new System.Drawing.Point(469, 77);
+            this.btn_Huy.Location = new System.Drawing.Point(499, 75);
             this.btn_Huy.Name = "btn_Huy";
             this.btn_Huy.Size = new System.Drawing.Size(47, 48);
             this.btn_Huy.TabIndex = 10;
@@ -142,7 +142,7 @@
             this.btn_Tim.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_Tim.ForeColor = System.Drawing.Color.Black;
             this.btn_Tim.Image = global::Sales_Manange_Furniture.Properties.Resources.iconsearch1;
-            this.btn_Tim.Location = new System.Drawing.Point(406, 77);
+            this.btn_Tim.Location = new System.Drawing.Point(436, 75);
             this.btn_Tim.Name = "btn_Tim";
             this.btn_Tim.Size = new System.Drawing.Size(47, 48);
             this.btn_Tim.TabIndex = 9;
@@ -156,7 +156,8 @@
             this.Controls.Add(this.txt_Tim);
             this.Controls.Add(this.dgv_KhachHang);
             this.Name = "UCSanPham";
-            this.Size = new System.Drawing.Size(1696, 919);
+            this.Size = new System.Drawing.Size(1743, 919);
+            this.Load += new System.EventHandler(this.UCSanPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_KhachHang)).EndInit();
             this.ResumeLayout(false);
 

@@ -1,4 +1,4 @@
-﻿namespace Sales_Manange_Furniture.views
+﻿namespace Sales_Manage_Furniture.views
 {
     partial class FEditKhachHang
     {
@@ -290,6 +290,7 @@
             this.Controls.Add(this.label3);
             this.Name = "FEditKhachHang";
             this.Text = "FEditKhachHang";
+            this.Load += new System.EventHandler(this.FEditKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

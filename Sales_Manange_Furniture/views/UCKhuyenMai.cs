@@ -8,16 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Sales_Manage_Furniture.views
+namespace Sales_Manange_Furniture.views
 {
-    public partial class FAddKhachHangcs : Form
+    public partial class UCKhuyenMai : UserControl
     {
-        public FAddKhachHangcs()
+        public UCKhuyenMai()
         {
             InitializeComponent();
         }
 
-        private void FAddKhachHangcs_Load(object sender, EventArgs e)
+        private void tp_KhuyenMai_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sales_Manage_Furniture;
 
-namespace Sales_Manage_Furniture
+namespace Sales_Manage_Furniture.views
 {
     public partial class FWelcome : Form
     {

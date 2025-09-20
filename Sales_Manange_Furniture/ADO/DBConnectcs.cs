@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace Sales_Manange_Furniture.config
+namespace Sales_Manage_Furniture.config
 {
     internal class DBConnect
     {
@@ -12,7 +12,7 @@ namespace Sales_Manange_Furniture.config
         public DBConnect()
         {
             // Lấy chuỗi kết nối từ App.config
-            string connectionString = ConfigurationManager.ConnectionStrings["Sales_Manange_Furniture.Properties.Settings.QuanLyNoiThatConnectionString"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["Sales_Manage_Furniture.Properties.Settings.QuanLyNoiThatConnectionString"].ConnectionString;
             conn = new SqlConnection(connectionString);
         }
 

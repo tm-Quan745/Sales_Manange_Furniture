@@ -1,4 +1,4 @@
-﻿namespace Sales_Manage_Furniture
+﻿namespace Sales_Manage_Furniture.views
 {
     partial class FLogin
     {
@@ -33,25 +33,25 @@
             this.guna2Shapes2 = new Guna.UI2.WinForms.Guna2Shapes();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.phide = new System.Windows.Forms.PictureBox();
             this.guna2Shapes3 = new Guna.UI2.WinForms.Guna2Shapes();
-            this.pshow = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_passwd = new Guna.UI2.WinForms.Guna2TextBox();
             this.btn_login = new Guna.UI2.WinForms.Guna2Button();
-            this.rbtn_admin = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.rbtn_employee = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rbtn_QuanLy = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rbtn_NhanVien = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.phide = new System.Windows.Forms.PictureBox();
+            this.pshow = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pshow)).BeginInit();
-            this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +67,7 @@
             this.txt_username.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txt_username.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txt_username.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_username.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
             this.txt_username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_username.ForeColor = System.Drawing.Color.White;
@@ -74,7 +75,7 @@
             this.txt_username.Location = new System.Drawing.Point(9, 45);
             this.txt_username.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_username.Name = "txt_username";
-            this.txt_username.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
+            this.txt_username.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txt_username.PlaceholderText = "";
             this.txt_username.SelectedText = "";
             this.txt_username.Size = new System.Drawing.Size(471, 48);
@@ -112,9 +113,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 33);
+            this.label1.Size = new System.Drawing.Size(207, 33);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Username";
+            this.label1.Text = "Tên đăng nhập";
             // 
             // panel2
             // 
@@ -128,17 +129,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(524, 110);
             this.panel2.TabIndex = 6;
-            // 
-            // phide
-            // 
-            this.phide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
-            this.phide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.phide.Location = new System.Drawing.Point(467, 45);
-            this.phide.Name = "phide";
-            this.phide.Size = new System.Drawing.Size(50, 50);
-            this.phide.TabIndex = 8;
-            this.phide.TabStop = false;
-            this.phide.Click += new System.EventHandler(this.phide_Click);
             // 
             // guna2Shapes3
             // 
@@ -154,17 +144,6 @@
             this.guna2Shapes3.Text = "guna2Shapes3";
             this.guna2Shapes3.Zoom = 100;
             // 
-            // pshow
-            // 
-            this.pshow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
-            this.pshow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pshow.Location = new System.Drawing.Point(467, 45);
-            this.pshow.Name = "pshow";
-            this.pshow.Size = new System.Drawing.Size(50, 50);
-            this.pshow.TabIndex = 7;
-            this.pshow.TabStop = false;
-            this.pshow.Click += new System.EventHandler(this.pshow_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -172,9 +151,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 8);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 33);
+            this.label2.Size = new System.Drawing.Size(134, 33);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Password";
+            this.label2.Text = "Mật khẩu";
             // 
             // txt_passwd
             // 
@@ -187,6 +166,7 @@
             this.txt_passwd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txt_passwd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txt_passwd.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_passwd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
             this.txt_passwd.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_passwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_passwd.ForeColor = System.Drawing.Color.White;
@@ -222,61 +202,61 @@
             this.btn_login.ShadowDecoration.Color = System.Drawing.Color.DimGray;
             this.btn_login.Size = new System.Drawing.Size(279, 77);
             this.btn_login.TabIndex = 7;
-            this.btn_login.Text = " LOG IN";
+            this.btn_login.Text = "Đăng nhập";
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
-            // rbtn_admin
+            // rbtn_QuanLy
             // 
-            this.rbtn_admin.AutoSize = true;
-            this.rbtn_admin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
-            this.rbtn_admin.CheckedState.BorderColor = System.Drawing.Color.Maroon;
-            this.rbtn_admin.CheckedState.BorderThickness = 0;
-            this.rbtn_admin.CheckedState.FillColor = System.Drawing.Color.White;
-            this.rbtn_admin.CheckedState.InnerColor = System.Drawing.Color.Maroon;
-            this.rbtn_admin.CheckedState.InnerOffset = -6;
-            this.rbtn_admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.rbtn_admin.ForeColor = System.Drawing.Color.White;
-            this.rbtn_admin.Location = new System.Drawing.Point(28, 16);
-            this.rbtn_admin.Name = "rbtn_admin";
-            this.rbtn_admin.Size = new System.Drawing.Size(112, 33);
-            this.rbtn_admin.TabIndex = 8;
-            this.rbtn_admin.Text = "Admin";
-            this.rbtn_admin.UncheckedState.BorderColor = System.Drawing.Color.White;
-            this.rbtn_admin.UncheckedState.BorderThickness = 2;
-            this.rbtn_admin.UncheckedState.FillColor = System.Drawing.Color.White;
-            this.rbtn_admin.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rbtn_admin.UseVisualStyleBackColor = false;
+            this.rbtn_QuanLy.AutoSize = true;
+            this.rbtn_QuanLy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
+            this.rbtn_QuanLy.CheckedState.BorderColor = System.Drawing.Color.Maroon;
+            this.rbtn_QuanLy.CheckedState.BorderThickness = 0;
+            this.rbtn_QuanLy.CheckedState.FillColor = System.Drawing.Color.White;
+            this.rbtn_QuanLy.CheckedState.InnerColor = System.Drawing.Color.Maroon;
+            this.rbtn_QuanLy.CheckedState.InnerOffset = -6;
+            this.rbtn_QuanLy.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.rbtn_QuanLy.ForeColor = System.Drawing.Color.White;
+            this.rbtn_QuanLy.Location = new System.Drawing.Point(28, 16);
+            this.rbtn_QuanLy.Name = "rbtn_QuanLy";
+            this.rbtn_QuanLy.Size = new System.Drawing.Size(128, 33);
+            this.rbtn_QuanLy.TabIndex = 8;
+            this.rbtn_QuanLy.Text = "Quản lý";
+            this.rbtn_QuanLy.UncheckedState.BorderColor = System.Drawing.Color.White;
+            this.rbtn_QuanLy.UncheckedState.BorderThickness = 2;
+            this.rbtn_QuanLy.UncheckedState.FillColor = System.Drawing.Color.White;
+            this.rbtn_QuanLy.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rbtn_QuanLy.UseVisualStyleBackColor = false;
             // 
-            // rbtn_employee
+            // rbtn_NhanVien
             // 
-            this.rbtn_employee.AutoSize = true;
-            this.rbtn_employee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
-            this.rbtn_employee.Checked = true;
-            this.rbtn_employee.CheckedState.BorderColor = System.Drawing.Color.Maroon;
-            this.rbtn_employee.CheckedState.BorderThickness = 0;
-            this.rbtn_employee.CheckedState.FillColor = System.Drawing.Color.White;
-            this.rbtn_employee.CheckedState.InnerColor = System.Drawing.Color.Maroon;
-            this.rbtn_employee.CheckedState.InnerOffset = -6;
-            this.rbtn_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.rbtn_employee.ForeColor = System.Drawing.Color.White;
-            this.rbtn_employee.Location = new System.Drawing.Point(210, 16);
-            this.rbtn_employee.Name = "rbtn_employee";
-            this.rbtn_employee.Size = new System.Drawing.Size(156, 33);
-            this.rbtn_employee.TabIndex = 9;
-            this.rbtn_employee.TabStop = true;
-            this.rbtn_employee.Text = "Employee";
-            this.rbtn_employee.UncheckedState.BorderColor = System.Drawing.Color.Transparent;
-            this.rbtn_employee.UncheckedState.BorderThickness = 2;
-            this.rbtn_employee.UncheckedState.FillColor = System.Drawing.Color.White;
-            this.rbtn_employee.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rbtn_employee.UseMnemonic = false;
-            this.rbtn_employee.UseVisualStyleBackColor = false;
+            this.rbtn_NhanVien.AutoSize = true;
+            this.rbtn_NhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
+            this.rbtn_NhanVien.Checked = true;
+            this.rbtn_NhanVien.CheckedState.BorderColor = System.Drawing.Color.Maroon;
+            this.rbtn_NhanVien.CheckedState.BorderThickness = 0;
+            this.rbtn_NhanVien.CheckedState.FillColor = System.Drawing.Color.White;
+            this.rbtn_NhanVien.CheckedState.InnerColor = System.Drawing.Color.Maroon;
+            this.rbtn_NhanVien.CheckedState.InnerOffset = -6;
+            this.rbtn_NhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.rbtn_NhanVien.ForeColor = System.Drawing.Color.White;
+            this.rbtn_NhanVien.Location = new System.Drawing.Point(210, 16);
+            this.rbtn_NhanVien.Name = "rbtn_NhanVien";
+            this.rbtn_NhanVien.Size = new System.Drawing.Size(157, 33);
+            this.rbtn_NhanVien.TabIndex = 9;
+            this.rbtn_NhanVien.TabStop = true;
+            this.rbtn_NhanVien.Text = "Nhân viên";
+            this.rbtn_NhanVien.UncheckedState.BorderColor = System.Drawing.Color.Transparent;
+            this.rbtn_NhanVien.UncheckedState.BorderThickness = 2;
+            this.rbtn_NhanVien.UncheckedState.FillColor = System.Drawing.Color.White;
+            this.rbtn_NhanVien.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rbtn_NhanVien.UseMnemonic = false;
+            this.rbtn_NhanVien.UseVisualStyleBackColor = false;
             // 
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.BorderThickness = 0;
-            this.guna2GroupBox1.Controls.Add(this.rbtn_employee);
-            this.guna2GroupBox1.Controls.Add(this.rbtn_admin);
+            this.guna2GroupBox1.Controls.Add(this.rbtn_NhanVien);
+            this.guna2GroupBox1.Controls.Add(this.rbtn_QuanLy);
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
             this.guna2GroupBox1.CustomBorderThickness = new System.Windows.Forms.Padding(0);
             this.guna2GroupBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
@@ -312,6 +292,7 @@
             this.label3.Size = new System.Drawing.Size(299, 102);
             this.label3.TabIndex = 12;
             this.label3.Text = "HQ2T";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -323,6 +304,29 @@
             this.label4.Size = new System.Drawing.Size(307, 26);
             this.label4.TabIndex = 13;
             this.label4.Text = "Công ty TNHH nội thất nhà đẹp";
+            // 
+            // phide
+            // 
+            this.phide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
+            this.phide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.phide.Image = global::Sales_Manange_Furniture.Properties.Resources.eye_1;
+            this.phide.Location = new System.Drawing.Point(467, 45);
+            this.phide.Name = "phide";
+            this.phide.Size = new System.Drawing.Size(50, 50);
+            this.phide.TabIndex = 8;
+            this.phide.TabStop = false;
+            this.phide.Click += new System.EventHandler(this.phide_Click);
+            // 
+            // pshow
+            // 
+            this.pshow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
+            this.pshow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pshow.Location = new System.Drawing.Point(467, 45);
+            this.pshow.Name = "pshow";
+            this.pshow.Size = new System.Drawing.Size(50, 50);
+            this.pshow.TabIndex = 7;
+            this.pshow.TabStop = false;
+            this.pshow.Click += new System.EventHandler(this.pshow_Click);
             // 
             // pictureBox2
             // 
@@ -346,6 +350,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // FLogin
             // 
@@ -371,10 +376,10 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.phide)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pshow)).EndInit();
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.phide)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pshow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -397,8 +402,8 @@
         private System.Windows.Forms.PictureBox pshow;
         private System.Windows.Forms.PictureBox phide;
         private Guna.UI2.WinForms.Guna2Button btn_login;
-        private Guna.UI2.WinForms.Guna2RadioButton rbtn_admin;
-        private Guna.UI2.WinForms.Guna2RadioButton rbtn_employee;
+        private Guna.UI2.WinForms.Guna2RadioButton rbtn_QuanLy;
+        private Guna.UI2.WinForms.Guna2RadioButton rbtn_NhanVien;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes1;
         private System.Windows.Forms.Label label3;

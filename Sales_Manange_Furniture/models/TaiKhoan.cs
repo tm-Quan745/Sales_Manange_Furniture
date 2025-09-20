@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sales_Manage_Furniture.Models
+namespace Sales_Manage_Furniture.models
 {
     public class TaiKhoan
     {
@@ -27,7 +27,7 @@ namespace Sales_Manage_Furniture.Models
             set { maNV = value; }
         }
 
-        public string QuyenHan
+        public string Quyen
         {
             get { return quyenHan; }
             set { quyenHan = value; }
@@ -47,7 +47,7 @@ namespace Sales_Manage_Furniture.Models
 
         public override string ToString()
         {
-            return $"{TenDangNhap} - {QuyenHan}";
+            return $"{TenDangNhap} - {Quyen}";
         }
     }
 }

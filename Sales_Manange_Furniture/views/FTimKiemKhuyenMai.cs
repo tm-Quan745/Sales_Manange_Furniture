@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Sales_Manage_Furniture.views
+namespace Sales_Manange_Furniture.views
 {
-    public partial class FAddKhachHangcs : Form
+    public partial class FTimKiemKhuyenMai : Form
     {
-        public FAddKhachHangcs()
+        public FTimKiemKhuyenMai()
         {
             InitializeComponent();
-        }
-
-        private void FAddKhachHangcs_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

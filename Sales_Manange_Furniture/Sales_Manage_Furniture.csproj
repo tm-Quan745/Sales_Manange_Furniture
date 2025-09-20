@@ -58,8 +58,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="config\DBConnectcs.cs" />
+    <Compile Include="ADO\DBConnectcs.cs" />
+    <Compile Include="controllers\HoaDonController.cs" />
+    <Compile Include="controllers\KhachHangController.cs" />
     <Compile Include="controllers\LoginController.cs" />
+    <Compile Include="controllers\SanPhamController.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,11 +86,23 @@
     <Compile Include="models\NhanVien.cs" />
     <Compile Include="models\SanPham.cs" />
     <Compile Include="models\TaiKhoan.cs" />
+    <Compile Include="views\ChonKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\ChonKhachHang.Designer.cs">
+      <DependentUpon>ChonKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\FAddKhachHangcs.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="views\FAddKhachHangcs.Designer.cs">
       <DependentUpon>FAddKhachHangcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FHoaDon.Designer.cs">
+      <DependentUpon>FHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="views\FNhanVien.cs">
       <SubType>Form</SubType>
@@ -100,6 +115,18 @@
     </Compile>
     <Compile Include="views\FEditKhachHang.Designer.cs">
       <DependentUpon>FEditKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FQuanLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FQuanLy.Designer.cs">
+      <DependentUpon>FQuanLy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FTimKiemKhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FTimKiemKhuyenMai.Designer.cs">
+      <DependentUpon>FTimKiemKhuyenMai.cs</DependentUpon>
     </Compile>
     <Compile Include="views\Sidebar.cs">
       <SubType>UserControl</SubType>
@@ -127,6 +154,12 @@
     </Compile>
     <Compile Include="program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="views\UCKhuyenMai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\UCKhuyenMai.Designer.cs">
+      <DependentUpon>UCKhuyenMai.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\UCBanHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -157,17 +190,32 @@
     <Compile Include="views\UCThongKe.Designer.cs">
       <DependentUpon>UCThongKe.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mainform.resx">
       <DependentUpon>Mainform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\ChonKhachHang.resx">
+      <DependentUpon>ChonKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\FAddKhachHangcs.resx">
       <DependentUpon>FAddKhachHangcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FHoaDon.resx">
+      <DependentUpon>FHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FNhanVien.resx">
       <DependentUpon>FNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FEditKhachHang.resx">
       <DependentUpon>FEditKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FQuanLy.resx">
+      <DependentUpon>FQuanLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FTimKiemKhuyenMai.resx">
+      <DependentUpon>FTimKiemKhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Sidebar.resx">
       <DependentUpon>Sidebar.cs</DependentUpon>
@@ -191,6 +239,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="views\UCKhuyenMai.resx">
+      <DependentUpon>UCKhuyenMai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\UCBanHang.resx">
       <DependentUpon>UCBanHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,7 +282,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="images\eye 1.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="images\pos.png" />
   </ItemGroup>
@@ -285,6 +338,24 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\KhuyenMai.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="config\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\logoutdo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\logo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\KhuyenMaiden.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

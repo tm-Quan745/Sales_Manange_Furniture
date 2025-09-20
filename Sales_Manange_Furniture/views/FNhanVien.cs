@@ -8,8 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms; // Thêm namespace Guna2Button
-
-namespace Sales_Manange_Furniture.views
+using Sales_Manage_Furniture.views;
+using Sales_Manange_Furniture.views;
+namespace Sales_Manage_Furniture.views
 {
     public partial class FNhanVien : Form
     {
@@ -30,6 +31,7 @@ namespace Sales_Manange_Furniture.views
         private void LoadTab(UserControl uc)
         {
             pnl_Main.Controls.Clear();   // Xóa control cũ
+            pnl_Main.Padding = new Padding(25, 0, 0, 0); // chừa khoảng trống 10px bên trái
             uc.Dock = DockStyle.Fill;    // Fill toàn bộ Panel
             pnl_Main.Controls.Add(uc);   // Thêm UC mới
         }
@@ -55,11 +57,6 @@ namespace Sales_Manange_Furniture.views
             ActivateButton(btn_BanHang);
         }
 
-        private void btn_ThongKe_Click(object sender, EventArgs e)
-        {
-            LoadTab(new UCThongKe());
-            ActivateButton(btn_ThongKe);
-        }
 
         private void Btn_KhachHang_Click(object sender, EventArgs e)
         {
@@ -84,5 +81,64 @@ namespace Sales_Manange_Furniture.views
         {
             btn_BanHang.PerformClick();
         }
+
+        private void pnl_Sidebar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnl_Topbar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_DangXuat_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Bạn có chắc muốn đăng xuất không?",
+                "Xác nhận",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                FLogin login = new FLogin();
+                login.ShowDialog();
+                this.Close();
+            }
+        }
+
+        private void FNhanVien_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+

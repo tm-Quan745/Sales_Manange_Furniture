@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sales_Manage_Furniture.Models
+namespace Sales_Manage_Furniture.models
 {
     public class ChiTietHDB
     {

@@ -27,29 +27,15 @@ namespace Sales_Manange_Furniture.views
 
         }
 
-        private void guna2HtmlLabel3_Click(object sender, EventArgs e)
+        private void btn_ThanhToan_Click(object sender, EventArgs e)
         {
+            // 4. Hiện thông báo
+            MessageBox.Show("Đơn hàng đã được lưu thành công!",
+                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-        }
-
-        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2HtmlLabel4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2ContextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void guna2HtmlLabel9_Click(object sender, EventArgs e)
-        {
-
+            // 5. Mở form Hóa đơn để xem/ in
+            FHoaDon f = new FHoaDon(); // truyền mã hóa đơn qua constructor
+            f.ShowDialog();
         }
     }
 }
