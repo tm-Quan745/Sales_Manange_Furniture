@@ -3,6 +3,7 @@ using System.Windows.Forms;
 
 using Sales_Manage_Furniture.controllers;
 using Sales_Manage_Furniture.models;
+using Sales_Manange_Furniture.views;
 
 namespace Sales_Manage_Furniture.views
 {
@@ -71,7 +72,7 @@ namespace Sales_Manage_Furniture.views
 
                     // Mở form dành cho nhân viên
                     this.Hide();
-                    var fEmployee = new FNhanVien();
+                    var fEmployee = new FNhanVien(userLogin.HoTen);
                     fEmployee.Show();
 
                     fEmployee.FormClosed += (s, args) => Application.Exit();
@@ -80,11 +81,11 @@ namespace Sales_Manage_Furniture.views
                 {
                     txt_username.Clear();
                     txt_passwd.Clear();
-                    userLogin.HoTen = "Admin";
+                    userLogin = login_control.GetEmployee(username);
 
                     // Mở form dành cho admin
                     this.Hide();
-                    var fManager = new FNhanVien();
+                    var fManager = new FQuanLy(userLogin.HoTen);
                     fManager.Show();
 
                     fManager.FormClosed += (s, args) => Application.Exit();

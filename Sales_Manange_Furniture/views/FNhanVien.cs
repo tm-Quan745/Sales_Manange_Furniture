@@ -17,12 +17,17 @@ namespace Sales_Manage_Furniture.views
         private Guna2Button currentButton = null; // Lưu button đang được chọn
         private Color defaultColor = Color.FromArgb(53, 74, 98); // Màu mặc định
         private Color activeColor = ColorTranslator.FromHtml("#99B4D1"); // Màu hover/active
+        private string _Hoten;
 
         public FNhanVien()
         {
             InitializeComponent();
         }
-
+        public FNhanVien(string Hoten) // <-- constructor mới
+        {
+            InitializeComponent();
+            _Hoten = Hoten;
+        }
         private void pnl_Main_Paint(object sender, PaintEventArgs e)
         {
         }
@@ -137,7 +142,7 @@ namespace Sales_Manage_Furniture.views
 
         private void FNhanVien_Load(object sender, EventArgs e)
         {
-
+            txt_Ten.Text = _Hoten;
         }
     }
 }

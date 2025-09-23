@@ -36,11 +36,11 @@
             this.pnl_Sidebar = new Guna.UI2.WinForms.Guna2Panel();
             this.btn_DangXuat = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.btn_BanHang = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_HoaDon = new Guna.UI2.WinForms.Guna2Button();
             this.btn_ThongKe = new Guna.UI2.WinForms.Guna2Button();
             this.btn_KhuyenMai = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_BanHang = new Guna.UI2.WinForms.Guna2Button();
             this.pnl_Topbar.SuspendLayout();
             this.pnl_Sidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -89,7 +89,7 @@
             this.txt_VaiTro.PlaceholderText = "Quản lý";
             this.txt_VaiTro.ReadOnly = true;
             this.txt_VaiTro.SelectedText = "";
-            this.txt_VaiTro.Size = new System.Drawing.Size(94, 33);
+            this.txt_VaiTro.Size = new System.Drawing.Size(103, 33);
             this.txt_VaiTro.TabIndex = 22;
             // 
             // txt_Ten
@@ -164,6 +164,31 @@
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2CirclePictureBox1.TabIndex = 16;
             this.guna2CirclePictureBox1.TabStop = false;
+            // 
+            // btn_BanHang
+            // 
+            this.btn_BanHang.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_BanHang.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_BanHang.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_BanHang.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_BanHang.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
+            this.btn_BanHang.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_BanHang.ForeColor = System.Drawing.Color.White;
+            this.btn_BanHang.HoverState.BorderColor = System.Drawing.Color.White;
+            this.btn_BanHang.HoverState.FillColor = System.Drawing.Color.White;
+            this.btn_BanHang.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
+            this.btn_BanHang.HoverState.Image = global::Sales_Manange_Furniture.Properties.Resources.posden;
+            this.btn_BanHang.Image = global::Sales_Manange_Furniture.Properties.Resources.pos;
+            this.btn_BanHang.ImageOffset = new System.Drawing.Point(21, -15);
+            this.btn_BanHang.ImageSize = new System.Drawing.Size(70, 70);
+            this.btn_BanHang.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_BanHang.Location = new System.Drawing.Point(8, 540);
+            this.btn_BanHang.Name = "btn_BanHang";
+            this.btn_BanHang.Size = new System.Drawing.Size(204, 156);
+            this.btn_BanHang.TabIndex = 24;
+            this.btn_BanHang.Text = "Bán hàng";
+            this.btn_BanHang.TextOffset = new System.Drawing.Point(-17, 40);
+            this.btn_BanHang.Click += new System.EventHandler(this.btn_BanHang_Click);
             // 
             // pictureBox2
             // 
@@ -250,31 +275,6 @@
             this.btn_KhuyenMai.Text = "Khuyến mãi";
             this.btn_KhuyenMai.TextOffset = new System.Drawing.Point(-18, 40);
             this.btn_KhuyenMai.Click += new System.EventHandler(this.btn_KhuyenMai_Click);
-            // 
-            // btn_BanHang
-            // 
-            this.btn_BanHang.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_BanHang.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_BanHang.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_BanHang.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_BanHang.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
-            this.btn_BanHang.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_BanHang.ForeColor = System.Drawing.Color.White;
-            this.btn_BanHang.HoverState.BorderColor = System.Drawing.Color.White;
-            this.btn_BanHang.HoverState.FillColor = System.Drawing.Color.White;
-            this.btn_BanHang.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
-            this.btn_BanHang.HoverState.Image = global::Sales_Manange_Furniture.Properties.Resources.posden;
-            this.btn_BanHang.Image = global::Sales_Manange_Furniture.Properties.Resources.pos;
-            this.btn_BanHang.ImageOffset = new System.Drawing.Point(21, -15);
-            this.btn_BanHang.ImageSize = new System.Drawing.Size(70, 70);
-            this.btn_BanHang.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_BanHang.Location = new System.Drawing.Point(8, 540);
-            this.btn_BanHang.Name = "btn_BanHang";
-            this.btn_BanHang.Size = new System.Drawing.Size(204, 156);
-            this.btn_BanHang.TabIndex = 24;
-            this.btn_BanHang.Text = "Bán hàng";
-            this.btn_BanHang.TextOffset = new System.Drawing.Point(-17, 40);
-            this.btn_BanHang.Click += new System.EventHandler(this.btn_BanHang_Click);
             // 
             // FQuanLy
             // 

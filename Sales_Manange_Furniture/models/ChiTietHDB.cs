@@ -4,58 +4,50 @@ namespace Sales_Manage_Furniture.models
 {
     public class ChiTietHDB
     {
-        private int maHDB;
-        private int maSP;
-        private int soLuong;
-        private decimal donGia;
-        private decimal thanhTien;
+        public int MaHDB { get; set; }
+        public int MaSP { get; set; }
+        public string TenSP { get; set; } // Tên sản phẩm
+        public int SoLuong { get; set; }
+        public decimal DonGia { get; set; }
 
-        public int MaHDB
+        // Thành tiền gốc (chưa KM)
+        public decimal ThanhTien => SoLuong * DonGia;
+
+        // --- Thông tin khuyến mãi tham chiếu ---
+        public int? MaKM { get; set; }       // có thể null nếu SP ko có KM
+        public string TenKM { get; set; }    // Tên khuyến mãi
+        public string LoaiKM { get; set; }   // "PERCENT" hoặc "AMOUNT"
+        public decimal GiaTriKM { get; set; } // % giảm hoặc số tiền giảm
+
+        // Đơn giá sau khi áp dụng khuyến mãi
+        public decimal DonGiaSauKM
         {
-            get { return maHDB; }
-            set { maHDB = value; }
+            get
+            {
+                if (LoaiKM == "PERCENT")
+                    return DonGia * (1 - GiaTriKM / 100);
+                else if (LoaiKM == "AMOUNT")
+                    return DonGia - GiaTriKM > 0 ? DonGia - GiaTriKM : 0;
+                return DonGia;
+            }
         }
 
-        public int MaSP
-        {
-            get { return maSP; }
-            set { maSP = value; }
-        }
+        // Thành tiền sau khuyến mãi
+        public decimal ThanhTienSauKM => SoLuong * DonGiaSauKM;
 
-        public int SoLuong
-        {
-            get { return soLuong; }
-            set { soLuong = value; }
-        }
-
-        public decimal DonGia
-        {
-            get { return donGia; }
-            set { donGia = value; }
-        }
-
-        public decimal ThanhTien
-        {
-            get { return thanhTien; }
-            set { thanhTien = value; }
-        }
-
-        // Constructor mặc định
         public ChiTietHDB() { }
 
-        // Constructor có tham số
         public ChiTietHDB(int maHDB, int maSP, int soLuong, decimal donGia)
         {
-            this.maHDB = maHDB;
-            this.maSP = maSP;
-            this.soLuong = soLuong;
-            this.donGia = donGia;
-            this.thanhTien = soLuong * donGia; // tự động tính
+            MaHDB = maHDB;
+            MaSP = maSP;
+            SoLuong = soLuong;
+            DonGia = donGia;
         }
 
         public override string ToString()
         {
-            return $"SP#{MaSP} - SL: {SoLuong} - Giá: {DonGia:C} - Thành tiền: {ThanhTien:C}";
+            return $"SP#{MaSP} - SL: {SoLuong} - Giá gốc: {DonGia:C} - KM: {TenKM} - Giá sau KM: {DonGiaSauKM:C} - Thành tiền: {ThanhTienSauKM:C}";
         }
     }
 }

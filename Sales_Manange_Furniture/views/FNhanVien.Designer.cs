@@ -30,21 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FNhanVien));
             this.pnl_Sidebar = new Guna.UI2.WinForms.Guna2Panel();
-            this.pnl_Topbar = new Guna.UI2.WinForms.Guna2Panel();
-            this.txt_VaiTro = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txt_Ten = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pnl_Main = new Guna.UI2.WinForms.Guna2Panel();
-            this.btn_DangXuat = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Btn_KhachHang = new Guna.UI2.WinForms.Guna2Button();
             this.btn_HoaDon = new Guna.UI2.WinForms.Guna2Button();
             this.btn_BanHang = new Guna.UI2.WinForms.Guna2Button();
             this.btn_SanPham = new Guna.UI2.WinForms.Guna2Button();
+            this.pnl_Topbar = new Guna.UI2.WinForms.Guna2Panel();
+            this.btn_DangXuat = new Guna.UI2.WinForms.Guna2Button();
+            this.txt_VaiTro = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txt_Ten = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.pnl_Main = new Guna.UI2.WinForms.Guna2Panel();
             this.pnl_Sidebar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnl_Topbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Sidebar
@@ -61,112 +61,6 @@
             this.pnl_Sidebar.Size = new System.Drawing.Size(210, 1033);
             this.pnl_Sidebar.TabIndex = 0;
             this.pnl_Sidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Sidebar_Paint);
-            // 
-            // pnl_Topbar
-            // 
-            this.pnl_Topbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.pnl_Topbar.Controls.Add(this.btn_DangXuat);
-            this.pnl_Topbar.Controls.Add(this.txt_VaiTro);
-            this.pnl_Topbar.Controls.Add(this.txt_Ten);
-            this.pnl_Topbar.Controls.Add(this.guna2CirclePictureBox1);
-            this.pnl_Topbar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_Topbar.Location = new System.Drawing.Point(210, 0);
-            this.pnl_Topbar.Name = "pnl_Topbar";
-            this.pnl_Topbar.Size = new System.Drawing.Size(1692, 116);
-            this.pnl_Topbar.TabIndex = 1;
-            this.pnl_Topbar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Topbar_Paint);
-            // 
-            // txt_VaiTro
-            // 
-            this.txt_VaiTro.BorderThickness = 0;
-            this.txt_VaiTro.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_VaiTro.DefaultText = "";
-            this.txt_VaiTro.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_VaiTro.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_VaiTro.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_VaiTro.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_VaiTro.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.txt_VaiTro.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_VaiTro.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_VaiTro.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_VaiTro.Location = new System.Drawing.Point(1493, 58);
-            this.txt_VaiTro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_VaiTro.Name = "txt_VaiTro";
-            this.txt_VaiTro.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
-            this.txt_VaiTro.PlaceholderText = "Nhân viên";
-            this.txt_VaiTro.SelectedText = "";
-            this.txt_VaiTro.Size = new System.Drawing.Size(94, 33);
-            this.txt_VaiTro.TabIndex = 22;
-            // 
-            // txt_Ten
-            // 
-            this.txt_Ten.BorderThickness = 0;
-            this.txt_Ten.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_Ten.DefaultText = "";
-            this.txt_Ten.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_Ten.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_Ten.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_Ten.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_Ten.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.txt_Ten.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_Ten.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Ten.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
-            this.txt_Ten.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_Ten.Location = new System.Drawing.Point(1476, 21);
-            this.txt_Ten.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_Ten.Name = "txt_Ten";
-            this.txt_Ten.PlaceholderText = "Minh Quận";
-            this.txt_Ten.SelectedText = "";
-            this.txt_Ten.Size = new System.Drawing.Size(181, 48);
-            this.txt_Ten.TabIndex = 21;
-            // 
-            // pnl_Main
-            // 
-            this.pnl_Main.BackColor = System.Drawing.Color.White;
-            this.pnl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Main.Location = new System.Drawing.Point(210, 116);
-            this.pnl_Main.Name = "pnl_Main";
-            this.pnl_Main.Size = new System.Drawing.Size(1692, 917);
-            this.pnl_Main.TabIndex = 2;
-            this.pnl_Main.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Main_Paint);
-            // 
-            // btn_DangXuat
-            // 
-            this.btn_DangXuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_DangXuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_DangXuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_DangXuat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_DangXuat.FillColor = System.Drawing.Color.Transparent;
-            this.btn_DangXuat.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DangXuat.ForeColor = System.Drawing.Color.Black;
-            this.btn_DangXuat.HoverState.BorderColor = System.Drawing.Color.White;
-            this.btn_DangXuat.HoverState.FillColor = System.Drawing.Color.White;
-            this.btn_DangXuat.HoverState.ForeColor = System.Drawing.Color.Red;
-            this.btn_DangXuat.HoverState.Image = global::Sales_Manange_Furniture.Properties.Resources.logoutdo;
-            this.btn_DangXuat.Image = global::Sales_Manange_Furniture.Properties.Resources.logout;
-            this.btn_DangXuat.ImageSize = new System.Drawing.Size(35, 35);
-            this.btn_DangXuat.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_DangXuat.Location = new System.Drawing.Point(1663, 21);
-            this.btn_DangXuat.Name = "btn_DangXuat";
-            this.btn_DangXuat.Size = new System.Drawing.Size(101, 82);
-            this.btn_DangXuat.TabIndex = 23;
-            this.btn_DangXuat.Text = "Đăng xuất";
-            this.btn_DangXuat.Tile = true;
-            this.btn_DangXuat.Click += new System.EventHandler(this.btn_DangXuat_Click);
-            // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.Silver;
-            this.guna2CirclePictureBox1.Image = global::Sales_Manange_Furniture.Properties.Resources.avatar;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(1369, 0);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(133, 114);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox1.TabIndex = 16;
-            this.guna2CirclePictureBox1.TabStop = false;
-            this.guna2CirclePictureBox1.Click += new System.EventHandler(this.guna2CirclePictureBox1_Click);
             // 
             // pictureBox2
             // 
@@ -279,6 +173,112 @@
             this.btn_SanPham.TextOffset = new System.Drawing.Point(-17, 40);
             this.btn_SanPham.Click += new System.EventHandler(this.btn_SanPham_Click);
             // 
+            // pnl_Topbar
+            // 
+            this.pnl_Topbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.pnl_Topbar.Controls.Add(this.btn_DangXuat);
+            this.pnl_Topbar.Controls.Add(this.txt_VaiTro);
+            this.pnl_Topbar.Controls.Add(this.txt_Ten);
+            this.pnl_Topbar.Controls.Add(this.guna2CirclePictureBox1);
+            this.pnl_Topbar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_Topbar.Location = new System.Drawing.Point(210, 0);
+            this.pnl_Topbar.Name = "pnl_Topbar";
+            this.pnl_Topbar.Size = new System.Drawing.Size(1692, 116);
+            this.pnl_Topbar.TabIndex = 1;
+            this.pnl_Topbar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Topbar_Paint);
+            // 
+            // btn_DangXuat
+            // 
+            this.btn_DangXuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_DangXuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_DangXuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_DangXuat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_DangXuat.FillColor = System.Drawing.Color.Transparent;
+            this.btn_DangXuat.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DangXuat.ForeColor = System.Drawing.Color.Black;
+            this.btn_DangXuat.HoverState.BorderColor = System.Drawing.Color.White;
+            this.btn_DangXuat.HoverState.FillColor = System.Drawing.Color.White;
+            this.btn_DangXuat.HoverState.ForeColor = System.Drawing.Color.Red;
+            this.btn_DangXuat.HoverState.Image = global::Sales_Manange_Furniture.Properties.Resources.logoutdo;
+            this.btn_DangXuat.Image = global::Sales_Manange_Furniture.Properties.Resources.logout;
+            this.btn_DangXuat.ImageSize = new System.Drawing.Size(35, 35);
+            this.btn_DangXuat.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_DangXuat.Location = new System.Drawing.Point(1663, 21);
+            this.btn_DangXuat.Name = "btn_DangXuat";
+            this.btn_DangXuat.Size = new System.Drawing.Size(101, 82);
+            this.btn_DangXuat.TabIndex = 23;
+            this.btn_DangXuat.Text = "Đăng xuất";
+            this.btn_DangXuat.Tile = true;
+            this.btn_DangXuat.Click += new System.EventHandler(this.btn_DangXuat_Click);
+            // 
+            // txt_VaiTro
+            // 
+            this.txt_VaiTro.BorderThickness = 0;
+            this.txt_VaiTro.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_VaiTro.DefaultText = "";
+            this.txt_VaiTro.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_VaiTro.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_VaiTro.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_VaiTro.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_VaiTro.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.txt_VaiTro.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_VaiTro.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_VaiTro.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_VaiTro.Location = new System.Drawing.Point(1493, 58);
+            this.txt_VaiTro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_VaiTro.Name = "txt_VaiTro";
+            this.txt_VaiTro.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
+            this.txt_VaiTro.PlaceholderText = "Nhân viên";
+            this.txt_VaiTro.SelectedText = "";
+            this.txt_VaiTro.Size = new System.Drawing.Size(127, 33);
+            this.txt_VaiTro.TabIndex = 22;
+            // 
+            // txt_Ten
+            // 
+            this.txt_Ten.BorderThickness = 0;
+            this.txt_Ten.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_Ten.DefaultText = "";
+            this.txt_Ten.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_Ten.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_Ten.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_Ten.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_Ten.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.txt_Ten.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_Ten.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Ten.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
+            this.txt_Ten.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_Ten.Location = new System.Drawing.Point(1476, 21);
+            this.txt_Ten.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_Ten.Name = "txt_Ten";
+            this.txt_Ten.PlaceholderText = "Minh Quận";
+            this.txt_Ten.SelectedText = "";
+            this.txt_Ten.Size = new System.Drawing.Size(181, 48);
+            this.txt_Ten.TabIndex = 21;
+            // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.Silver;
+            this.guna2CirclePictureBox1.Image = global::Sales_Manange_Furniture.Properties.Resources.avatar;
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(1369, 0);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(133, 114);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox1.TabIndex = 16;
+            this.guna2CirclePictureBox1.TabStop = false;
+            this.guna2CirclePictureBox1.Click += new System.EventHandler(this.guna2CirclePictureBox1_Click);
+            // 
+            // pnl_Main
+            // 
+            this.pnl_Main.BackColor = System.Drawing.Color.White;
+            this.pnl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Main.Location = new System.Drawing.Point(210, 116);
+            this.pnl_Main.Name = "pnl_Main";
+            this.pnl_Main.Size = new System.Drawing.Size(1692, 917);
+            this.pnl_Main.TabIndex = 2;
+            this.pnl_Main.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Main_Paint);
+            // 
             // FNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -295,9 +295,9 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FNhanVien_Load);
             this.pnl_Sidebar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnl_Topbar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

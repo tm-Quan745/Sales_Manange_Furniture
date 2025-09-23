@@ -100,5 +100,28 @@ namespace Sales_Manage_Furniture.controllers
 
             return db.ExecuteNonQuery(query, parameters) > 0;
         }
+        public KhachHang GetByID(int id)
+        {
+            string query = "SELECT * FROM KhachHang WHERE MaKH=@ma";
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@ma", id)
+            };
+            DataTable dt = db.ExecuteQuery(query, parameters);
+            if (dt.Rows.Count > 0)
+            {
+                DataRow row = dt.Rows[0];
+                return new KhachHang
+                {
+                    MaKH = Convert.ToInt32(row["MaKH"]),
+                    HoTen = row["HoTen"].ToString(),
+                    DiaChi = row["DiaChi"].ToString(),
+                    SoDienThoai = row["SoDienThoai"].ToString(),
+                    Email = row["Email"].ToString()
+                };
+            }
+            return null;
+        }
+
     }
 }
