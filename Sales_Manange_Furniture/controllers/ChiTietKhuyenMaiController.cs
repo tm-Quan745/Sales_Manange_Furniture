@@ -3,6 +3,7 @@ using Sales_Manange_Furniture.models;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace Sales_Manange_Furniture.controllers
 {
@@ -71,17 +72,69 @@ namespace Sales_Manange_Furniture.controllers
         // Thêm chi tiết KM
         public int Insert(ChiTietKhuyenMai ctkm)
         {
-            string query = @"INSERT INTO ChiTietKhuyenMai (MaKM, MaSP, GiaTriApDung)
-                             VALUES (@MaKM, @MaSP, @GiaTriApDung)";
+            string query = @"INSERT INTO ChiTietKhuyenMai (MaKM, MaSP, KieuKM, GiaTriApDung)
+                     VALUES (@MaKM, @MaSP, @KieuKM, @GiaTriApDung)";
 
             var parameters = new[]
             {
-                new System.Data.SqlClient.SqlParameter("@MaKM", ctkm.MaKM),
-                new System.Data.SqlClient.SqlParameter("@MaSP", ctkm.MaSP),
-                new System.Data.SqlClient.SqlParameter("@GiaTriApDung", ctkm.GiaTriApDung)
+                new SqlParameter("@MaKM", ctkm.MaKM),
+                new SqlParameter("@MaSP", ctkm.MaSP),
+                new SqlParameter("@KieuKM", ctkm.KieuKM ?? (object)DBNull.Value), // tránh null
+                new SqlParameter("@GiaTriApDung", ctkm.GiaTriApDung)
             };
 
             return db.ExecuteNonQuery(query, parameters);
         }
+
+        public int Update(ChiTietKhuyenMai ctkm)
+        {
+            string query = @"UPDATE ChiTietKhuyenMai
+                     SET KieuKM = @KieuKM,
+                         GiaTriApDung = @GiaTriApDung
+                     WHERE MaKM = @MaKM AND MaSP = @MaSP";
+
+            var parameters = new[]
+            {
+                new SqlParameter("@KieuKM", ctkm.KieuKM),
+                new SqlParameter("@GiaTriApDung", ctkm.GiaTriApDung),
+                new SqlParameter("@MaKM", ctkm.MaKM),
+                new SqlParameter("@MaSP", ctkm.MaSP)
+            };
+
+            return db.ExecuteNonQuery(query, parameters);
+        }
+
+        public int Delete(int maKM, int maSP)
+        {
+            string query = @"DELETE FROM ChiTietKhuyenMai 
+                     WHERE MaKM = @MaKM AND MaSP = @MaSP";
+
+            var parameters = new[]
+            {
+                new SqlParameter("@MaKM", maKM),
+                new SqlParameter("@MaSP", maSP)
+            };
+
+            return db.ExecuteNonQuery(query, parameters);
+        }
+
+        public DataTable Search(string keyword)
+        {
+            string query = @"
+                SELECT ctkm.MaKM, km.TenKM, ctkm.MaSP, sp.TenSP, 
+                       ctkm.KieuKM, ctkm.GiaTriApDung
+                FROM ChiTietKhuyenMai ctkm
+                INNER JOIN KhuyenMai km ON ctkm.MaKM = km.MaKM
+                INNER JOIN SanPham sp ON ctkm.MaSP = sp.MaSP
+                WHERE km.TenKM LIKE @Keyword OR sp.TenSP LIKE @Keyword";
+
+            var parameters = new[]
+            {
+                new SqlParameter("@Keyword", "%" + keyword + "%")
+            };
+
+            return db.ExecuteQuery(query, parameters);
+        }
+
     }
 }

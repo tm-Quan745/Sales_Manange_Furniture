@@ -39,25 +39,20 @@ namespace Sales_Manage_Furniture.controllers
         }
 
         // Thêm chi tiết hóa đơn
-        public bool Insert(ChiTietHDB ct, decimal vatRate = 0.1m, decimal khuyenMai = 0)
+        public bool Insert(ChiTietHDB ct)
         {
-            string query = @"INSERT INTO ChiTietHDB(MaHDB, MaSP, SoLuong, DonGia) 
-                             VALUES (@mahdb, @masp, @soluong, @dongia)";
+            string query = @"INSERT INTO ChiTietHDB(MaHDB, MaSP, SoLuong, DonGia, MaKM) 
+                             VALUES (@mahdb, @masp, @soluong, @dongia, @makm)";
             SqlParameter[] parameters =
             {
                 new SqlParameter("@mahdb", ct.MaHDB),
                 new SqlParameter("@masp", ct.MaSP),
                 new SqlParameter("@soluong", ct.SoLuong),
-                new SqlParameter("@dongia", ct.DonGia)
+                new SqlParameter("@dongia", ct.DonGia),
+                new SqlParameter("@makm", ct.MaKM.HasValue ? (object)ct.MaKM.Value : DBNull.Value)
             };
 
             bool success = db.ExecuteNonQuery(query, parameters) > 0;
-
-            if (success)
-            {
-                // Sau khi thêm chi tiết, tính lại tổng tiền cho hóa đơn
-                hoaDonCtrl.TinhTien(ct.MaHDB, vatRate, khuyenMai);
-            }
 
             return success;
         }
@@ -78,10 +73,7 @@ namespace Sales_Manage_Furniture.controllers
 
             bool success = db.ExecuteNonQuery(query, parameters) > 0;
 
-            if (success)
-            {
-                hoaDonCtrl.TinhTien(ct.MaHDB, vatRate, khuyenMai);
-            }
+           
 
             return success;
         }
@@ -98,11 +90,7 @@ namespace Sales_Manage_Furniture.controllers
 
             bool success = db.ExecuteNonQuery(query, parameters) > 0;
 
-            if (success)
-            {
-                hoaDonCtrl.TinhTien(maHDB, vatRate, khuyenMai);
-            }
-
+            
             return success;
         }
     }

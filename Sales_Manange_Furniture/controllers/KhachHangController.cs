@@ -61,13 +61,13 @@ namespace Sales_Manage_Furniture.controllers
         // Thêm khách hàng mới
         public bool Insert(KhachHang kh)
         {
-            string query = "INSERT INTO KhachHang (HoTen, DiaChi, SoDienThoai, Email) VALUES (@ten, @diachi, @sdt, @email)";
+            string query = "INSERT INTO KhachHang (HoTen, SoDienThoai) VALUES (@ten, @sdt)";
             SqlParameter[] parameters =
             {
                 new SqlParameter("@ten", kh.HoTen),
-                new SqlParameter("@diachi", kh.DiaChi),
+                //new SqlParameter("@diachi", kh.DiaChi),
                 new SqlParameter("@sdt", kh.SoDienThoai),
-                new SqlParameter("@email", kh.Email)
+                //new SqlParameter("@email", kh.Email)
             };
 
             return db.ExecuteNonQuery(query, parameters) > 0;
@@ -121,6 +121,61 @@ namespace Sales_Manage_Furniture.controllers
                 };
             }
             return null;
+        }
+
+        public KhachHang GetByPhone(string SDT)
+        {
+            string query = "SELECT * FROM KhachHang WHERE SoDienThoai=@SDT";
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@SDT", SDT)
+            };
+            DataTable dt = db.ExecuteQuery(query, parameters);
+            if (dt.Rows.Count > 0)
+            {
+                DataRow row = dt.Rows[0];
+                return new KhachHang
+                {
+                    MaKH = Convert.ToInt32(row["MaKH"]),
+                    HoTen = row["HoTen"].ToString(),
+                    DiaChi = row["DiaChi"].ToString(),
+                    SoDienThoai = row["SoDienThoai"].ToString(),
+                    Email = row["Email"].ToString()
+                };
+            }
+            return null;
+        }
+
+        // Tìm khách hàng theo tên, số điện thoại hoặc email
+        public List<KhachHang> search(string keyword)
+        {
+            string query = @"
+            SELECT * FROM KhachHang 
+            WHERE HoTen LIKE @kw 
+           OR SoDienThoai LIKE @kw 
+           OR Email LIKE @kw";
+
+            SqlParameter[] parameters =
+            {
+            new SqlParameter("@kw", "%" + keyword + "%")
+            };
+
+            DataTable dt = db.ExecuteQuery(query, parameters);
+            List<KhachHang> list = new List<KhachHang>();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                list.Add(new KhachHang
+                {
+                    MaKH = Convert.ToInt32(row["MaKH"]),
+                    HoTen = row["HoTen"].ToString(),
+                    DiaChi = row["DiaChi"].ToString(),
+                    SoDienThoai = row["SoDienThoai"].ToString(),
+                    Email = row["Email"].ToString()
+                });
+            }
+
+            return list;
         }
 
     }

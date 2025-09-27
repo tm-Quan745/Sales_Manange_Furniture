@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sales_Manage_Furniture.models;
 using Guna.UI2.WinForms;
 
 namespace Sales_Manange_Furniture.views
@@ -16,15 +17,15 @@ namespace Sales_Manange_Furniture.views
         private Guna2Button currentButton = null; // Lưu button đang được chọn
         private Color defaultColor = Color.FromArgb(53, 74, 98); // Màu mặc định
         private Color activeColor = ColorTranslator.FromHtml("#99B4D1"); // Màu hover/active
-        String _HoTen;
+        public NhanVien _nv;
         public FQuanLy()
         {
             InitializeComponent();
         }
-        public FQuanLy(String HoTen)
+        public FQuanLy(NhanVien nv)
         {
             InitializeComponent();
-            _HoTen = HoTen;
+            _nv = nv;
         }
         // Hàm load UserControl vào panel
         private void LoadTab(UserControl uc)
@@ -53,7 +54,7 @@ namespace Sales_Manange_Furniture.views
 
         private void FQuanLy_Load(object sender, EventArgs e)
         {
-            txt_Ten.Text = _HoTen;
+            txt_Ten.Text = _nv.HoTen;
         }
 
         private void pnl_Topbar_Paint_1(object sender, PaintEventArgs e)
@@ -88,7 +89,7 @@ namespace Sales_Manange_Furniture.views
 
         private void btn_BanHang_Click(object sender, EventArgs e)
         {
-            LoadTab(new UCBanHang());
+            LoadTab(new UCBanHang(_nv));
             ActivateButton(btn_BanHang);
         }
 

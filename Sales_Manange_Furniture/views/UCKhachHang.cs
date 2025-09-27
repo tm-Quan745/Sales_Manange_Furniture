@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using Sales_Manage_Furniture.controllers;
+using Sales_Manage_Furniture.models;
 using Sales_Manage_Furniture.views;
 
 namespace Sales_Manange_Furniture.views
@@ -39,8 +40,35 @@ namespace Sales_Manange_Furniture.views
 
         private void UCKhachHang_Load(object sender, EventArgs e)
         {
-            var list = khCtrl.GetAll();
-            dgv_KhachHang.DataSource = list;
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            dgv_KhachHang.DataSource = khCtrl.GetAll();
+        }
+
+        private void btn_Tim_Click(object sender, EventArgs e)
+        {
+            string input = txt_Tim.Text.Trim();
+            if (string.IsNullOrEmpty(input))
+            {
+                MessageBox.Show("Vui lòng nhập tên, số điện thoại hoặc email khách hàng cần tìm!");
+                return;
+            }
+
+            List<KhachHang> result = khCtrl.Search(input); // Search theo tên, SĐT, Email
+
+            dgv_KhachHang.DataSource = result.Count > 0 ? result : null;
+
+            if (result.Count == 0)
+                MessageBox.Show("Không tìm thấy khách hàng nào phù hợp!");
+        }
+
+        private void btn_LamMoi_Click(object sender, EventArgs e)
+        {
+            LoadData();
+            txt_Tim.Clear();
         }
     }
 }

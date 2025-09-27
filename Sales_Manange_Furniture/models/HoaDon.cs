@@ -7,7 +7,7 @@ namespace Sales_Manage_Furniture.models
         public int MaHDB { get; set; }
         public int MaKH { get; set; }
         public int MaNV { get; set; }
-        public DateTime NgayBan { get; set; }
+        public DateTime? NgayBan { get; set; }
 
         public decimal TienTamTinh { get; set; }
         public decimal ChietKhau { get; set; }

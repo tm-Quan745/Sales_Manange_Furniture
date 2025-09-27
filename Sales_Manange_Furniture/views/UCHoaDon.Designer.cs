@@ -37,7 +37,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_Tim = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btn_Huy = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Tim = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.dgv_HoaDon = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -49,6 +48,7 @@
             this.col_ThueVat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_LamMoi = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HoaDon)).BeginInit();
             this.SuspendLayout();
@@ -73,25 +73,6 @@
             this.txt_Tim.Size = new System.Drawing.Size(321, 48);
             this.txt_Tim.TabIndex = 4;
             // 
-            // btn_Huy
-            // 
-            this.btn_Huy.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_Huy.BorderColor = System.Drawing.Color.Red;
-            this.btn_Huy.BorderRadius = 10;
-            this.btn_Huy.BorderThickness = 1;
-            this.btn_Huy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Huy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Huy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Huy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Huy.FillColor = System.Drawing.Color.White;
-            this.btn_Huy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Huy.ForeColor = System.Drawing.Color.Red;
-            this.btn_Huy.Location = new System.Drawing.Point(513, 75);
-            this.btn_Huy.Name = "btn_Huy";
-            this.btn_Huy.Size = new System.Drawing.Size(47, 48);
-            this.btn_Huy.TabIndex = 8;
-            this.btn_Huy.Text = "X";
-            // 
             // btn_Tim
             // 
             this.btn_Tim.BackColor = System.Drawing.SystemColors.Control;
@@ -107,9 +88,9 @@
             this.btn_Tim.Image = global::Sales_Manange_Furniture.Properties.Resources.iconsearch1;
             this.btn_Tim.Location = new System.Drawing.Point(450, 75);
             this.btn_Tim.Name = "btn_Tim";
-            this.btn_Tim.Size = new System.Drawing.Size(47, 48);
+            this.btn_Tim.Size = new System.Drawing.Size(95, 48);
             this.btn_Tim.TabIndex = 7;
-            this.btn_Tim.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.btn_Tim.Click += new System.EventHandler(this.btn_Tim_Click);
             // 
             // guna2GradientPanel1
             // 
@@ -262,12 +243,31 @@
             this.col_TrangThai.MinimumWidth = 6;
             this.col_TrangThai.Name = "col_TrangThai";
             // 
+            // btn_LamMoi
+            // 
+            this.btn_LamMoi.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_LamMoi.BorderRadius = 10;
+            this.btn_LamMoi.BorderThickness = 1;
+            this.btn_LamMoi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_LamMoi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_LamMoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_LamMoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_LamMoi.FillColor = System.Drawing.Color.White;
+            this.btn_LamMoi.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_LamMoi.ForeColor = System.Drawing.Color.Black;
+            this.btn_LamMoi.Image = global::Sales_Manange_Furniture.Properties.Resources.reload;
+            this.btn_LamMoi.Location = new System.Drawing.Point(551, 75);
+            this.btn_LamMoi.Name = "btn_LamMoi";
+            this.btn_LamMoi.Size = new System.Drawing.Size(67, 48);
+            this.btn_LamMoi.TabIndex = 81;
+            this.btn_LamMoi.Click += new System.EventHandler(this.btn_LamMoi_Click);
+            // 
             // UCHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_LamMoi);
             this.Controls.Add(this.guna2GradientPanel1);
-            this.Controls.Add(this.btn_Huy);
             this.Controls.Add(this.btn_Tim);
             this.Controls.Add(this.txt_Tim);
             this.Name = "UCHoaDon";
@@ -282,7 +282,6 @@
         #endregion
         private Guna.UI2.WinForms.Guna2TextBox txt_Tim;
         private Guna.UI2.WinForms.Guna2Button btn_Tim;
-        private Guna.UI2.WinForms.Guna2Button btn_Huy;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2DataGridView dgv_HoaDon;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_MaHDB;
@@ -293,5 +292,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_ThueVat;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_TongTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_TrangThai;
+        private Guna.UI2.WinForms.Guna2Button btn_LamMoi;
     }
 }

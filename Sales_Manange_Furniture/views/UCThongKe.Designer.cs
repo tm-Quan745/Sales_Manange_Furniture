@@ -28,44 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pnlChart = new Guna.UI2.WinForms.Guna2Panel();
+            this.chartRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnlRevenue = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txt_DoanhThu = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlRecent = new Guna.UI2.WinForms.Guna2Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.dgv_DonHangGanDay = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.chartRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.txt_DoanhThu = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlChart.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).BeginInit();
             this.pnlRevenue.SuspendLayout();
             this.pnlRecent.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DonHangGanDay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlChart
             // 
-            this.pnlChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
+            this.pnlChart.BackColor = System.Drawing.Color.Transparent;
             this.pnlChart.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
             this.pnlChart.BorderRadius = 16;
+            this.pnlChart.Controls.Add(this.label1);
             this.pnlChart.Controls.Add(this.chartRevenue);
             this.pnlChart.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
-            this.pnlChart.FillColor = System.Drawing.Color.White;
+            this.pnlChart.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
             this.pnlChart.Location = new System.Drawing.Point(108, 104);
             this.pnlChart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlChart.Name = "pnlChart";
             this.pnlChart.Size = new System.Drawing.Size(941, 398);
             this.pnlChart.TabIndex = 5;
+            // 
+            // chartRevenue
+            // 
+            chartArea5.Name = "ChartArea1";
+            this.chartRevenue.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chartRevenue.Legends.Add(legend5);
+            this.chartRevenue.Location = new System.Drawing.Point(34, 83);
+            this.chartRevenue.Name = "chartRevenue";
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.chartRevenue.Series.Add(series5);
+            this.chartRevenue.Size = new System.Drawing.Size(838, 300);
+            this.chartRevenue.TabIndex = 0;
+            this.chartRevenue.Text = "chart1";
             // 
             // pnlRevenue
             // 
@@ -73,20 +91,71 @@
             this.pnlRevenue.Controls.Add(this.guna2TextBox1);
             this.pnlRevenue.Controls.Add(this.txt_DoanhThu);
             this.pnlRevenue.Controls.Add(this.label2);
-            this.pnlRevenue.FillColor = System.Drawing.Color.White;
+            this.pnlRevenue.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
             this.pnlRevenue.Location = new System.Drawing.Point(1096, 104);
             this.pnlRevenue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlRevenue.Name = "pnlRevenue";
             this.pnlRevenue.Size = new System.Drawing.Size(512, 398);
             this.pnlRevenue.TabIndex = 6;
             // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.guna2TextBox1.BorderColor = System.Drawing.Color.White;
+            this.guna2TextBox1.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDotDot;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Location = new System.Drawing.Point(142, 201);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PlaceholderText = "tăng hay giam";
+            this.guna2TextBox1.ReadOnly = true;
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.Size = new System.Drawing.Size(225, 57);
+            this.guna2TextBox1.TabIndex = 2;
+            this.guna2TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txt_DoanhThu
+            // 
+            this.txt_DoanhThu.BackColor = System.Drawing.Color.Transparent;
+            this.txt_DoanhThu.BorderColor = System.Drawing.Color.White;
+            this.txt_DoanhThu.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDotDot;
+            this.txt_DoanhThu.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_DoanhThu.DefaultText = "";
+            this.txt_DoanhThu.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_DoanhThu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_DoanhThu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_DoanhThu.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_DoanhThu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.txt_DoanhThu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_DoanhThu.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DoanhThu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_DoanhThu.Location = new System.Drawing.Point(12, 109);
+            this.txt_DoanhThu.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
+            this.txt_DoanhThu.Name = "txt_DoanhThu";
+            this.txt_DoanhThu.PlaceholderText = "10000000000";
+            this.txt_DoanhThu.ReadOnly = true;
+            this.txt_DoanhThu.SelectedText = "";
+            this.txt_DoanhThu.Size = new System.Drawing.Size(473, 88);
+            this.txt_DoanhThu.TabIndex = 1;
+            this.txt_DoanhThu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_DoanhThu.TextChanged += new System.EventHandler(this.txt_DoanhThu_TextChanged);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
-            this.label2.Location = new System.Drawing.Point(184, 43);
+            this.label2.Location = new System.Drawing.Point(165, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(173, 45);
             this.label2.TabIndex = 0;
@@ -98,24 +167,12 @@
             this.pnlRecent.BorderRadius = 21;
             this.pnlRecent.Controls.Add(this.guna2GradientPanel1);
             this.pnlRecent.Controls.Add(this.label5);
-            this.pnlRecent.FillColor = System.Drawing.Color.White;
+            this.pnlRecent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
             this.pnlRecent.Location = new System.Drawing.Point(108, 522);
             this.pnlRecent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlRecent.Name = "pnlRecent";
             this.pnlRecent.Size = new System.Drawing.Size(1500, 352);
             this.pnlRecent.TabIndex = 7;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
-            this.label5.Location = new System.Drawing.Point(25, 27);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(261, 32);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Đơn hàng gần đây";
             // 
             // guna2GradientPanel1
             // 
@@ -194,66 +251,29 @@
             this.dgv_DonHangGanDay.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_DonHangGanDay.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // chartRevenue
+            // label5
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chartRevenue.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chartRevenue.Legends.Add(legend5);
-            this.chartRevenue.Location = new System.Drawing.Point(44, 62);
-            this.chartRevenue.Name = "chartRevenue";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chartRevenue.Series.Add(series5);
-            this.chartRevenue.Size = new System.Drawing.Size(838, 300);
-            this.chartRevenue.TabIndex = 0;
-            this.chartRevenue.Text = "chart1";
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
+            this.label5.Location = new System.Drawing.Point(25, 27);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(261, 32);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Đơn hàng gần đây";
             // 
-            // txt_DoanhThu
+            // label1
             // 
-            this.txt_DoanhThu.BorderColor = System.Drawing.Color.White;
-            this.txt_DoanhThu.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_DoanhThu.DefaultText = "";
-            this.txt_DoanhThu.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_DoanhThu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_DoanhThu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_DoanhThu.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_DoanhThu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_DoanhThu.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_DoanhThu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_DoanhThu.Location = new System.Drawing.Point(0, 115);
-            this.txt_DoanhThu.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
-            this.txt_DoanhThu.Name = "txt_DoanhThu";
-            this.txt_DoanhThu.PlaceholderText = "";
-            this.txt_DoanhThu.ReadOnly = true;
-            this.txt_DoanhThu.SelectedText = "";
-            this.txt_DoanhThu.Size = new System.Drawing.Size(559, 88);
-            this.txt_DoanhThu.TabIndex = 1;
-            this.txt_DoanhThu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_DoanhThu.TextChanged += new System.EventHandler(this.txt_DoanhThu_TextChanged);
-            // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.White;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(165, 218);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.ReadOnly = true;
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(225, 57);
-            this.guna2TextBox1.TabIndex = 2;
-            this.guna2TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
+            this.label1.Location = new System.Drawing.Point(28, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(483, 32);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Biểu đô tổng doanh thu theo tháng";
             // 
             // UCThongKe
             // 
@@ -266,13 +286,14 @@
             this.Size = new System.Drawing.Size(1696, 919);
             this.Load += new System.EventHandler(this.UCThongKe_Load);
             this.pnlChart.ResumeLayout(false);
+            this.pnlChart.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).EndInit();
             this.pnlRevenue.ResumeLayout(false);
             this.pnlRevenue.PerformLayout();
             this.pnlRecent.ResumeLayout(false);
             this.pnlRecent.PerformLayout();
             this.guna2GradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DonHangGanDay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -289,5 +310,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartRevenue;
         private Guna.UI2.WinForms.Guna2TextBox txt_DoanhThu;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

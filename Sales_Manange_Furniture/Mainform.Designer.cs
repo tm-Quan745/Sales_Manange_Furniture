@@ -1,4 +1,6 @@
-﻿namespace Sales_Manange_Furniture
+﻿using Sales_Manage_Furniture.models;
+
+namespace Sales_Manange_Furniture
 {
     partial class Mainform
     {
@@ -29,7 +31,7 @@
         private void InitializeComponent()
         {
             this.topbar1 = new Sales_Manange_Furniture.Topbar();
-            this.ucBanHang1 = new Sales_Manange_Furniture.views.UCBanHang();
+            this.ucBanHang1 = new Sales_Manange_Furniture.views.UCBanHang(new NhanVien());
             this.sidebar1 = new Sales_Manange_Furniture.Sidebar();
             this.SuspendLayout();
             // 

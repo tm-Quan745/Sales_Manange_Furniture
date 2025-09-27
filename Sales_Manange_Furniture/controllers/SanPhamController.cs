@@ -216,5 +216,36 @@ namespace Sales_Manage_Furniture.controllers
             }
             return null;
         }
+        // Tìm sản phẩm theo tên
+        public List<SanPham> search(string tenSP)
+        {
+            string query = "SELECT * FROM SanPham WHERE TenSP LIKE @TenSP";
+            SqlParameter[] parameters =
+            {
+        new SqlParameter("@TenSP", "%" + tenSP + "%")
+    };
+
+            DataTable dt = db.ExecuteQuery(query, parameters);
+            List<SanPham> list = new List<SanPham>();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                list.Add(new SanPham
+                {
+                    MaSP = Convert.ToInt32(row["MaSP"]),
+                    TenSP = row["TenSP"].ToString(),
+                    MoTa = row["MoTa"].ToString(),
+                    GiaBan = Convert.ToDecimal(row["GiaBan"]),
+                    SoLuongTon = Convert.ToInt32(row["SoLuongTon"]),
+                    MaLoaiSP = Convert.ToInt32(row["MaLoaiSP"]),
+                    MaNCC = Convert.ToInt32(row["MaNCC"]),
+                    HinhAnh = row["HinhAnh"].ToString(),
+                    DonViTinh = row["DonViTinh"].ToString()
+                });
+            }
+
+            return list;
+        }
+
     }
 }

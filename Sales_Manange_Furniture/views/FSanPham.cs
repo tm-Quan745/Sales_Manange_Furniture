@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sales_Manage_Furniture.views;
 using Sales_Manage_Furniture.models;
 
 namespace Sales_Manange_Furniture.views
@@ -15,6 +16,8 @@ namespace Sales_Manange_Furniture.views
     public partial class FSanPham : Form
     {
         SanPham _sp = new SanPham();
+        public int SelectedMaSP { get; private set; }
+        public int SelectedSoLuong { get; private set; }
         public FSanPham()
         {
             InitializeComponent();
@@ -23,7 +26,7 @@ namespace Sales_Manange_Furniture.views
         {
             InitializeComponent();
             _sp = sp;
-
+            SelectedMaSP = sp.MaSP;
         }
 
         private void FSanPhamcs_Load(object sender, EventArgs e)
@@ -46,19 +49,19 @@ namespace Sales_Manange_Furniture.views
             txt_MaSP.Text = _sp.MaSP.ToString();
         }
 
-        private void txt_TenSP_TextChanged(object sender, EventArgs e)
+        private void btn_ThemVaoGio_Click(object sender, EventArgs e)
         {
-
+            // TODO: thêm sản phẩm vào giỏ hàng ở đây
+            SelectedSoLuong = Convert.ToInt32(txt_SoLuong.Text);
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
-        private void pic_SP_Click(object sender, EventArgs e)
+
+        private void btn_Huy_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void guna2HtmlLabel8_Click(object sender, EventArgs e)
-        {
-
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

@@ -20,16 +20,15 @@ namespace Sales_Manange_Furniture.views
         {
             InitializeComponent();
         }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private void UCHoaDon_Load(object sender, EventArgs e)
         {
+            LoadData();
 
         }
 
-        private void UCHoaDon_Load(object sender, EventArgs e)
+        private void LoadData()
         {
             dgv_HoaDon.DataSource = hdCrl.GetAll();
-
         }
 
         private void dgv_HoaDon_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -41,6 +40,42 @@ namespace Sales_Manange_Furniture.views
             List<ChiTietHDB> chiTiet = ctCrl.GetByHoaDon(maHD);
             FHoaDon f = new FHoaDon(hoaDon,chiTiet);
             f.ShowDialog();
+        }
+
+        private void btn_Tim_Click(object sender, EventArgs e)
+        {
+            string input = txt_Tim.Text.Trim();
+            if (string.IsNullOrEmpty(input))
+            {
+                MessageBox.Show("Vui lòng nhập mã hóa đơn hoặc thông tin khách hàng cần tìm!");
+                return;
+            }
+
+            List<HoaDon> result = new List<HoaDon>();
+
+            if (int.TryParse(input, out int maHD))
+            {
+                HoaDon hd = hdCrl.Search(maHD); // tìm theo ID
+                if (hd != null) result.Add(hd);
+            }
+            else
+            {
+                result = hdCrl.Search(input); // tìm theo chuỗi
+            }
+
+            dgv_HoaDon.DataSource = result.Count > 0 ? result : null;
+
+            if (result.Count == 0)
+                MessageBox.Show("Không tìm thấy hóa đơn nào phù hợp!");
+        }
+
+
+
+
+        private void btn_LamMoi_Click(object sender, EventArgs e)
+        {
+            LoadData();
+            txt_Tim.Clear();
         }
     }
 }

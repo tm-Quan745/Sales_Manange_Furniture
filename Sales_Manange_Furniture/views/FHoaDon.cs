@@ -50,6 +50,10 @@ namespace Sales_Manange_Furniture.views
             // Load chi tiết hóa đơn
             dgv_ChiTietHD.AutoGenerateColumns = false;
             dgv_ChiTietHD.DataSource = _ct;
+            if (_hd.NgayBan.HasValue)
+                dtp_NgayLap.Value = _hd.NgayBan.Value;
+            else
+                dtp_NgayLap.Value = DateTime.Now;
             txt_TamTinh.Text = $"{ _hd.TienTamTinh.ToString("N0")} VND";
             txt_ChietKhau.Text = $"- {_hd.ChietKhau.ToString("N0")} VND";
             txt_Vat.Text = $"+ {_hd.ThueVAT.ToString("N0")} VND";
@@ -81,7 +85,8 @@ namespace Sales_Manange_Furniture.views
 
         private void btn_Thoat_Click(object sender, EventArgs e)
         {
-
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
 
         private void guna2Panel2_Paint(object sender, PaintEventArgs e)

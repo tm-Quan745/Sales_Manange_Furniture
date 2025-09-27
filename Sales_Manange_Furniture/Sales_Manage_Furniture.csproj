@@ -62,6 +62,7 @@
     <Compile Include="ADO\DBConnectcs.cs" />
     <Compile Include="controllers\ChiTietHDB.cs" />
     <Compile Include="controllers\ChiTietKhuyenMaiController.cs" />
+    <Compile Include="controllers\GioHangController.cs" />
     <Compile Include="controllers\HoaDonController.cs" />
     <Compile Include="controllers\KhachHangController.cs" />
     <Compile Include="controllers\KhuyenMaiController.cs" />
@@ -82,6 +83,7 @@
     </Compile>
     <Compile Include="models\ChiTietHDB.cs" />
     <Compile Include="models\ChiTietKhuyenMai.cs" />
+    <Compile Include="models\GioHang.cs" />
     <Compile Include="models\HoaDon.cs" />
     <Compile Include="models\KhachHang.cs" />
     <Compile Include="models\KhuyenMai.cs" />
@@ -372,6 +374,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\KhuyenMaiden.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\reload.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

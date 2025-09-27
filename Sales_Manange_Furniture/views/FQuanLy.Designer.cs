@@ -31,19 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FQuanLy));
             this.pnl_Main = new Guna.UI2.WinForms.Guna2Panel();
             this.pnl_Topbar = new Guna.UI2.WinForms.Guna2Panel();
+            this.btn_DangXuat = new Guna.UI2.WinForms.Guna2Button();
             this.txt_VaiTro = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_Ten = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pnl_Sidebar = new Guna.UI2.WinForms.Guna2Panel();
-            this.btn_DangXuat = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.pnl_Sidebar = new Guna.UI2.WinForms.Guna2Panel();
             this.btn_BanHang = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_HoaDon = new Guna.UI2.WinForms.Guna2Button();
             this.btn_ThongKe = new Guna.UI2.WinForms.Guna2Button();
             this.btn_KhuyenMai = new Guna.UI2.WinForms.Guna2Button();
             this.pnl_Topbar.SuspendLayout();
-            this.pnl_Sidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            this.pnl_Sidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +68,29 @@
             this.pnl_Topbar.Name = "pnl_Topbar";
             this.pnl_Topbar.Size = new System.Drawing.Size(1692, 116);
             this.pnl_Topbar.TabIndex = 4;
+            // 
+            // btn_DangXuat
+            // 
+            this.btn_DangXuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_DangXuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_DangXuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_DangXuat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_DangXuat.FillColor = System.Drawing.Color.Transparent;
+            this.btn_DangXuat.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DangXuat.ForeColor = System.Drawing.Color.Black;
+            this.btn_DangXuat.HoverState.BorderColor = System.Drawing.Color.White;
+            this.btn_DangXuat.HoverState.FillColor = System.Drawing.Color.White;
+            this.btn_DangXuat.HoverState.ForeColor = System.Drawing.Color.Red;
+            this.btn_DangXuat.HoverState.Image = global::Sales_Manange_Furniture.Properties.Resources.logoutdo;
+            this.btn_DangXuat.Image = global::Sales_Manange_Furniture.Properties.Resources.logout;
+            this.btn_DangXuat.ImageSize = new System.Drawing.Size(35, 35);
+            this.btn_DangXuat.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_DangXuat.Location = new System.Drawing.Point(1663, 21);
+            this.btn_DangXuat.Name = "btn_DangXuat";
+            this.btn_DangXuat.Size = new System.Drawing.Size(101, 82);
+            this.btn_DangXuat.TabIndex = 23;
+            this.btn_DangXuat.Text = "Đăng xuất";
+            this.btn_DangXuat.Tile = true;
             // 
             // txt_VaiTro
             // 
@@ -115,6 +138,19 @@
             this.txt_Ten.Size = new System.Drawing.Size(181, 48);
             this.txt_Ten.TabIndex = 21;
             // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.Silver;
+            this.guna2CirclePictureBox1.Image = global::Sales_Manange_Furniture.Properties.Resources.avatar;
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(1369, 0);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(133, 114);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox1.TabIndex = 16;
+            this.guna2CirclePictureBox1.TabStop = false;
+            // 
             // pnl_Sidebar
             // 
             this.pnl_Sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
@@ -128,42 +164,6 @@
             this.pnl_Sidebar.Name = "pnl_Sidebar";
             this.pnl_Sidebar.Size = new System.Drawing.Size(210, 1033);
             this.pnl_Sidebar.TabIndex = 3;
-            // 
-            // btn_DangXuat
-            // 
-            this.btn_DangXuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_DangXuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_DangXuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_DangXuat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_DangXuat.FillColor = System.Drawing.Color.Transparent;
-            this.btn_DangXuat.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DangXuat.ForeColor = System.Drawing.Color.Black;
-            this.btn_DangXuat.HoverState.BorderColor = System.Drawing.Color.White;
-            this.btn_DangXuat.HoverState.FillColor = System.Drawing.Color.White;
-            this.btn_DangXuat.HoverState.ForeColor = System.Drawing.Color.Red;
-            this.btn_DangXuat.HoverState.Image = global::Sales_Manange_Furniture.Properties.Resources.logoutdo;
-            this.btn_DangXuat.Image = global::Sales_Manange_Furniture.Properties.Resources.logout;
-            this.btn_DangXuat.ImageSize = new System.Drawing.Size(35, 35);
-            this.btn_DangXuat.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_DangXuat.Location = new System.Drawing.Point(1663, 21);
-            this.btn_DangXuat.Name = "btn_DangXuat";
-            this.btn_DangXuat.Size = new System.Drawing.Size(101, 82);
-            this.btn_DangXuat.TabIndex = 23;
-            this.btn_DangXuat.Text = "Đăng xuất";
-            this.btn_DangXuat.Tile = true;
-            // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.Silver;
-            this.guna2CirclePictureBox1.Image = global::Sales_Manange_Furniture.Properties.Resources.avatar;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(1369, 0);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(133, 114);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox1.TabIndex = 16;
-            this.guna2CirclePictureBox1.TabStop = false;
             // 
             // btn_BanHang
             // 
@@ -286,11 +286,11 @@
             this.Controls.Add(this.pnl_Sidebar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FQuanLy";
-            this.Text = "Cửa hàng nội thất HQ2T";
+            this.Text = "    ";
             this.Load += new System.EventHandler(this.FQuanLy_Load);
             this.pnl_Topbar.ResumeLayout(false);
-            this.pnl_Sidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            this.pnl_Sidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 

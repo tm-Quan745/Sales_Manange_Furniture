@@ -60,7 +60,7 @@
             this.pnl_Sidebar.Name = "pnl_Sidebar";
             this.pnl_Sidebar.Size = new System.Drawing.Size(210, 1033);
             this.pnl_Sidebar.TabIndex = 0;
-            this.pnl_Sidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Sidebar_Paint);
+       
             // 
             // pictureBox2
             // 
@@ -185,7 +185,6 @@
             this.pnl_Topbar.Name = "pnl_Topbar";
             this.pnl_Topbar.Size = new System.Drawing.Size(1692, 116);
             this.pnl_Topbar.TabIndex = 1;
-            this.pnl_Topbar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Topbar_Paint);
             // 
             // btn_DangXuat
             // 
@@ -197,7 +196,7 @@
             this.btn_DangXuat.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DangXuat.ForeColor = System.Drawing.Color.Black;
             this.btn_DangXuat.HoverState.BorderColor = System.Drawing.Color.White;
-            this.btn_DangXuat.HoverState.FillColor = System.Drawing.Color.White;
+            this.btn_DangXuat.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.btn_DangXuat.HoverState.ForeColor = System.Drawing.Color.Red;
             this.btn_DangXuat.HoverState.Image = global::Sales_Manange_Furniture.Properties.Resources.logoutdo;
             this.btn_DangXuat.Image = global::Sales_Manange_Furniture.Properties.Resources.logout;
@@ -267,7 +266,6 @@
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2CirclePictureBox1.TabIndex = 16;
             this.guna2CirclePictureBox1.TabStop = false;
-            this.guna2CirclePictureBox1.Click += new System.EventHandler(this.guna2CirclePictureBox1_Click);
             // 
             // pnl_Main
             // 
@@ -277,7 +275,6 @@
             this.pnl_Main.Name = "pnl_Main";
             this.pnl_Main.Size = new System.Drawing.Size(1692, 917);
             this.pnl_Main.TabIndex = 2;
-            this.pnl_Main.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Main_Paint);
             // 
             // FNhanVien
             // 

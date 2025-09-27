@@ -72,7 +72,7 @@ namespace Sales_Manage_Furniture.views
 
                     // Mở form dành cho nhân viên
                     this.Hide();
-                    var fEmployee = new FNhanVien(userLogin.HoTen);
+                    var fEmployee = new FNhanVien(userLogin);
                     fEmployee.Show();
 
                     fEmployee.FormClosed += (s, args) => Application.Exit();
@@ -85,7 +85,7 @@ namespace Sales_Manage_Furniture.views
 
                     // Mở form dành cho admin
                     this.Hide();
-                    var fManager = new FQuanLy(userLogin.HoTen);
+                    var fManager = new FQuanLy(userLogin);
                     fManager.Show();
 
                     fManager.FormClosed += (s, args) => Application.Exit();
