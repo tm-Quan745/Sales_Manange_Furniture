@@ -14,11 +14,14 @@ namespace Sales_Manange_Furniture.views
 {
     public partial class UCThongKe : UserControl
     {
-        HoaDonController _hoaDonController = new HoaDonController();
-        ThongKeController tkCtrl = new ThongKeController();
+        HoaDonController _hoaDonController;
+        ThongKeController tkCtrl;
+        LoginController lgCtrl = new LoginController();
         public UCThongKe()
         {
             InitializeComponent();
+            tkCtrl = new ThongKeController(lgCtrl.USER_NAME);
+            _hoaDonController = new HoaDonController(lgCtrl.USER_NAME);
             dgv_DonHangGanDay.RowHeadersVisible = false;
             
             SetupDataGridView();
@@ -85,7 +88,7 @@ namespace Sales_Manange_Furniture.views
             chart.ChartAreas[0].AxisY.Title = "Doanh thu (VND)";
             chart.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
 
-            chart.Series[0].Color = Color.SaddleBrown;
+            chart.Series[0].Color = Color.FromArgb(53, 74, 98);
             chart.Series[0].BorderWidth = 2;
             chart.Legends.Clear();
         }
@@ -115,20 +118,20 @@ namespace Sales_Manange_Furniture.views
             var revenues = tkCtrl.GetMonthlyRevenue(year);
             decimal currentRevenue = revenues.ContainsKey(month) ? revenues[month] : 0;
 
-            txt_DoanhThu.Text = $"{currentRevenue:N0} VND"; // show doanh thu
+            lbl_DoanhThu.Text = $"{currentRevenue:N0} VND"; // show doanh thu
 
             // --- Phần trăm thay đổi so với tháng trước ---
             decimal percentChange = tkCtrl.GetPercentChange(year, month);
 
             if (percentChange >= 0)
             {
-                guna2TextBox1.Text = $"↑ Tăng {percentChange:N1}%";
-                guna2TextBox1.ForeColor = System.Drawing.Color.Green;
+                lbl_TyLe.Text = $"↑ Tăng {percentChange:N1}%";
+                lbl_TyLe.ForeColor = System.Drawing.Color.Green;
             }
             else
             {
-                guna2TextBox1.Text = $"↓ Giảm {Math.Abs(percentChange):N1}%";
-                guna2TextBox1.ForeColor = System.Drawing.Color.Red;
+                lbl_TyLe.Text = $"↓ Giảm {Math.Abs(percentChange):N1}%";
+                lbl_TyLe.ForeColor = System.Drawing.Color.Red;
             }
         }
 

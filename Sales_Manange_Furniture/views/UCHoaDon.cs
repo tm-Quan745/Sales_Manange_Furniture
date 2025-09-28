@@ -14,11 +14,15 @@ namespace Sales_Manange_Furniture.views
 {
     public partial class UCHoaDon : UserControl
     {
-        HoaDonController hdCrl = new HoaDonController();
-        ChiTietHDBController ctCrl = new ChiTietHDBController();
+        HoaDonController hdCrl;
+        ChiTietHDBController ctCrl;
+        LoginController loginCrl = new LoginController();
         public UCHoaDon()
         {
             InitializeComponent();
+            hdCrl = new HoaDonController(loginCrl.USER_NAME);
+            ctCrl = new ChiTietHDBController(loginCrl.USER_NAME);
+           
         }
         private void UCHoaDon_Load(object sender, EventArgs e)
         {

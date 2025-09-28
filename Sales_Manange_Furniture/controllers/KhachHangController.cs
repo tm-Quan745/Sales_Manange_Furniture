@@ -9,39 +9,22 @@ namespace Sales_Manage_Furniture.controllers
 {
     internal class KhachHangController
     {
-        private DBConnect db = new DBConnect();
+        DBConnect db;
+        LoginController lgCtrl = new LoginController();
+
+        public KhachHangController(string username)
+        {
+            string sqllogin = lgCtrl.GetSqlLogin(username);
+            string sqlpass = lgCtrl.GetSqlPass(username);
+            db = new DBConnect(sqllogin, sqlpass);
+        }
+
 
         // Lấy tất cả khách hàng
         public List<KhachHang> GetAll()
         {
-            string query = "SELECT * FROM KhachHang";
+            string query = "sp_GetAllKhachHang";
             DataTable dt = db.ExecuteQuery(query);
-            List<KhachHang> list = new List<KhachHang>();
-
-            foreach (DataRow row in dt.Rows)
-            {
-                list.Add(new KhachHang
-                {
-                    MaKH = Convert.ToInt32(row["MaKH"]),
-                    HoTen = row["HoTen"].ToString(),
-                    DiaChi = row["DiaChi"].ToString(),
-                    SoDienThoai = row["SoDienThoai"].ToString(),
-                    Email = row["Email"].ToString()
-                });
-            }
-            return list;
-        }
-
-        // Tìm khách hàng theo tên hoặc SĐT
-        public List<KhachHang> Search(string keyword)
-        {
-            string query = "SELECT * FROM KhachHang WHERE HoTen LIKE @kw OR SoDienThoai LIKE @kw";
-            SqlParameter[] parameters =
-            {
-                new SqlParameter("@kw", "%" + keyword + "%")
-            };
-
-            DataTable dt = db.ExecuteQuery(query, parameters);
             List<KhachHang> list = new List<KhachHang>();
 
             foreach (DataRow row in dt.Rows)
@@ -61,22 +44,20 @@ namespace Sales_Manage_Furniture.controllers
         // Thêm khách hàng mới
         public bool Insert(KhachHang kh)
         {
-            string query = "INSERT INTO KhachHang (HoTen, SoDienThoai) VALUES (@ten, @sdt)";
             SqlParameter[] parameters =
             {
-                new SqlParameter("@ten", kh.HoTen),
-                //new SqlParameter("@diachi", kh.DiaChi),
-                new SqlParameter("@sdt", kh.SoDienThoai),
-                //new SqlParameter("@email", kh.Email)
+                new SqlParameter("@HoTen", kh.HoTen),
+                new SqlParameter("@diachi", kh.DiaChi),
+                new SqlParameter("@SoDienThoai", kh.SoDienThoai),
+                new SqlParameter("@email", kh.Email)
             };
 
-            return db.ExecuteNonQuery(query, parameters) > 0;
+            return db.ExecuteNonQuery("sp_InsertKhachHang", parameters, CommandType.StoredProcedure) > 0;
         }
 
         // Cập nhật khách hàng
         public bool Update(KhachHang kh)
         {
-            string query = "UPDATE KhachHang SET HoTen=@ten, DiaChi=@diachi, SoDienThoai=@sdt, Email=@email WHERE MaKH=@ma";
             SqlParameter[] parameters =
             {
                 new SqlParameter("@ten", kh.HoTen),
@@ -86,28 +67,26 @@ namespace Sales_Manage_Furniture.controllers
                 new SqlParameter("@ma", kh.MaKH)
             };
 
-            return db.ExecuteNonQuery(query, parameters) > 0;
+            return db.ExecuteNonQuery("sp_UpdateKhachHang", parameters, CommandType.StoredProcedure) > 0;
         }
 
         // Xóa khách hàng
         public bool Delete(int maKH)
         {
-            string query = "DELETE FROM KhachHang WHERE MaKH=@ma";
             SqlParameter[] parameters =
             {
                 new SqlParameter("@ma", maKH)
             };
 
-            return db.ExecuteNonQuery(query, parameters) > 0;
+            return db.ExecuteNonQuery("sp_DeleteKhachHang", parameters, CommandType.StoredProcedure) > 0;
         }
         public KhachHang GetByID(int id)
         {
-            string query = "SELECT * FROM KhachHang WHERE MaKH=@ma";
             SqlParameter[] parameters =
             {
-                new SqlParameter("@ma", id)
+                new SqlParameter("@MaKH", id)
             };
-            DataTable dt = db.ExecuteQuery(query, parameters);
+            DataTable dt = db.ExecuteQuery("sp_GetKhachHangByID", parameters, CommandType.StoredProcedure);
             if (dt.Rows.Count > 0)
             {
                 DataRow row = dt.Rows[0];
@@ -125,12 +104,11 @@ namespace Sales_Manage_Furniture.controllers
 
         public KhachHang GetByPhone(string SDT)
         {
-            string query = "SELECT * FROM KhachHang WHERE SoDienThoai=@SDT";
             SqlParameter[] parameters =
             {
-                new SqlParameter("@SDT", SDT)
+                new SqlParameter("@SoDienThoai", SDT)
             };
-            DataTable dt = db.ExecuteQuery(query, parameters);
+            DataTable dt = db.ExecuteQuery("sp_GetKhachHangByPhone", parameters, CommandType.StoredProcedure);
             if (dt.Rows.Count > 0)
             {
                 DataRow row = dt.Rows[0];
@@ -149,18 +127,13 @@ namespace Sales_Manage_Furniture.controllers
         // Tìm khách hàng theo tên, số điện thoại hoặc email
         public List<KhachHang> search(string keyword)
         {
-            string query = @"
-            SELECT * FROM KhachHang 
-            WHERE HoTen LIKE @kw 
-           OR SoDienThoai LIKE @kw 
-           OR Email LIKE @kw";
-
+            
             SqlParameter[] parameters =
             {
             new SqlParameter("@kw", "%" + keyword + "%")
             };
 
-            DataTable dt = db.ExecuteQuery(query, parameters);
+            DataTable dt = db.ExecuteQuery("sp_SearchKhachHang", parameters, CommandType.StoredProcedure);
             List<KhachHang> list = new List<KhachHang>();
 
             foreach (DataRow row in dt.Rows)

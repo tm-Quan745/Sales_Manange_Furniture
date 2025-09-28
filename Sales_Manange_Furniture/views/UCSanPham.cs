@@ -17,10 +17,12 @@ namespace Sales_Manange_Furniture.views
 {
     public partial class UCSanPham : UserControl
     {
-        SanPhamController spCtrl = new SanPhamController();
+        SanPhamController spCtrl;
+        LoginController lgCtrl = new LoginController();
         public UCSanPham()
         {
             InitializeComponent();
+            spCtrl = new SanPhamController(lgCtrl.USER_NAME);
         }
         private void UCSanPham_Load(object sender, EventArgs e)
         {
@@ -86,7 +88,7 @@ namespace Sales_Manange_Furniture.views
                         if (parentForm != null)
                         {
                             
-                            parentForm.ChuyenSangTabGioHang();
+                            parentForm.ChuyenSangTabGioHang(maSP);
                         }
                     }
                 }

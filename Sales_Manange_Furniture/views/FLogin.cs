@@ -10,7 +10,6 @@ namespace Sales_Manage_Furniture.views
    
     public partial class FLogin : Form
     {
-        //public static EmployeeModel  userLogin = new EmployeeModel();
         public FLogin()
         {
             InitializeComponent();
@@ -41,6 +40,7 @@ namespace Sales_Manage_Furniture.views
 
         private void btn_login_Click(object sender, EventArgs e)
         {
+
             // Lấy username + password
             string username = txt_username.Text.Trim();
             string password = txt_passwd.Text.Trim();
@@ -51,54 +51,68 @@ namespace Sales_Manage_Furniture.views
             // Kiểm tra input
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ Username và Password.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập đầy đủ Username và Password.",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             // Gọi Controller xử lý login
             var login_control = new LoginController();
             string loginRole = login_control.Login(username, password, role);
-            var userLogin = new NhanVien();
-            if (loginRole != null) // Đăng nhập thành công
+
+            if (loginRole != null) // ✅ Đăng nhập thành công
             {
-                if (loginRole == "NhanVien")
+
+                // Lấy thông tin nhân viên đăng nhập
+                var userLogin = login_control.GetEmployee(username);
+                Session.MaNV = userLogin.MaNV;
+                Session.USER_NAME = username;
+                Session.Role = loginRole;
+                // Xóa ô nhập
+                txt_username.Clear();
+                txt_passwd.Clear();
+
+                // Ẩn form login
+                this.Hide();
+
+                Form nextForm = null;
+
+                // ✅ Kiểm tra vai trò và mở form tương ứng
+                if (loginRole == "Admin")
                 {
-
-                    txt_username.Clear();
-                    txt_passwd.Clear();
-
-                    // Lấy thông tin nhân viên đăng nhập
-                    userLogin = login_control.GetEmployee(username);
-
-                    // Mở form dành cho nhân viên
-                    this.Hide();
-                    var fEmployee = new FNhanVien(userLogin);
-                    fEmployee.Show();
-
-                    fEmployee.FormClosed += (s, args) => Application.Exit();
+                    nextForm = new FQuanLy(userLogin);
                 }
-                else if (loginRole == "Admin")
+                else if (loginRole == "NhanVien")
                 {
-                    txt_username.Clear();
-                    txt_passwd.Clear();
-                    userLogin = login_control.GetEmployee(username);
+                    nextForm = new FNhanVien(userLogin);
+                }
 
-                    // Mở form dành cho admin
-                    this.Hide();
-                    var fManager = new FQuanLy(userLogin);
-                    fManager.Show();
+                if (nextForm != null)
+                {
+                    // Khi form chính đóng -> quay lại form login
+                    nextForm.FormClosed += (s, args) =>
+                    {
+                        this.Show();
+                        this.txt_username.Focus();
+                    };
 
-                    fManager.FormClosed += (s, args) => Application.Exit();
+                    nextForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Không xác định được vai trò người dùng!",
+                                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Show();
                 }
             }
             else
             {
-                MessageBox.Show("Sai Username hoặc Password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Sai Username hoặc Password.",
+                                "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
-        
+
 
         private void FLogin_Load_1(object sender, EventArgs e)
         {

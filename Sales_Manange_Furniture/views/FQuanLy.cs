@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sales_Manage_Furniture.models;
 using Guna.UI2.WinForms;
+using Sales_Manage_Furniture.controllers;
 
 namespace Sales_Manange_Furniture.views
 {
@@ -89,7 +90,7 @@ namespace Sales_Manange_Furniture.views
 
         private void btn_BanHang_Click(object sender, EventArgs e)
         {
-            LoadTab(new UCBanHang(_nv));
+            LoadTab(new UCBanHang(_nv,1));
             ActivateButton(btn_BanHang);
         }
 
@@ -98,5 +99,18 @@ namespace Sales_Manange_Furniture.views
             LoadTab(new UCHoaDon());
             ActivateButton(btn_HoaDon);
         }
+
+        private void btn_DangXuat_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Bạn có chắc muốn đăng xuất không?",
+                "Xác nhận",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+            Session.Clear();
+            this.Close();
+        }
+
     }
 }

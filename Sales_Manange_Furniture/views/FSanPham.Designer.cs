@@ -45,13 +45,10 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btn_Huy = new Guna.UI2.WinForms.Guna2Button();
             this.btn_ThemVaoGio = new Guna.UI2.WinForms.Guna2Button();
-            this.nud_SoLuong = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_SP)).BeginInit();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_SoLuong)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -273,12 +270,10 @@
             this.guna2Panel1.BorderThickness = 1;
             this.guna2Panel1.Controls.Add(this.btn_Huy);
             this.guna2Panel1.Controls.Add(this.btn_ThemVaoGio);
-            this.guna2Panel1.Controls.Add(this.nud_SoLuong);
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel7);
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(281, 598);
+            this.guna2Panel1.Location = new System.Drawing.Point(533, 600);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(750, 167);
+            this.guna2Panel1.Size = new System.Drawing.Size(338, 167);
             this.guna2Panel1.TabIndex = 89;
             // 
             // btn_Huy
@@ -291,7 +286,7 @@
             this.btn_Huy.FillColor = System.Drawing.Color.Red;
             this.btn_Huy.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Huy.ForeColor = System.Drawing.Color.White;
-            this.btn_Huy.Location = new System.Drawing.Point(578, 57);
+            this.btn_Huy.Location = new System.Drawing.Point(188, 66);
             this.btn_Huy.Name = "btn_Huy";
             this.btn_Huy.Size = new System.Drawing.Size(117, 47);
             this.btn_Huy.TabIndex = 6;
@@ -309,34 +304,11 @@
             this.btn_ThemVaoGio.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_ThemVaoGio.ForeColor = System.Drawing.Color.White;
             this.btn_ThemVaoGio.Image = global::Sales_Manange_Furniture.Properties.Resources.pos;
-            this.btn_ThemVaoGio.Location = new System.Drawing.Point(455, 57);
+            this.btn_ThemVaoGio.Location = new System.Drawing.Point(65, 66);
             this.btn_ThemVaoGio.Name = "btn_ThemVaoGio";
             this.btn_ThemVaoGio.Size = new System.Drawing.Size(117, 47);
             this.btn_ThemVaoGio.TabIndex = 5;
             this.btn_ThemVaoGio.Click += new System.EventHandler(this.btn_ThemVaoGio_Click);
-            // 
-            // nud_SoLuong
-            // 
-            this.nud_SoLuong.BackColor = System.Drawing.Color.Transparent;
-            this.nud_SoLuong.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.nud_SoLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.nud_SoLuong.Location = new System.Drawing.Point(207, 68);
-            this.nud_SoLuong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.nud_SoLuong.Name = "nud_SoLuong";
-            this.nud_SoLuong.Size = new System.Drawing.Size(111, 33);
-            this.nud_SoLuong.TabIndex = 4;
-            // 
-            // guna2HtmlLabel7
-            // 
-            this.guna2HtmlLabel7.AutoSize = false;
-            this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel7.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(51, 76);
-            this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            this.guna2HtmlLabel7.Size = new System.Drawing.Size(190, 30);
-            this.guna2HtmlLabel7.TabIndex = 3;
-            this.guna2HtmlLabel7.Text = "Chọn số lượng:";
             // 
             // guna2GradientPanel1
             // 
@@ -372,12 +344,12 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Name = "FSanPham";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chi tiết sản phẩm";
             this.Load += new System.EventHandler(this.FSanPhamcs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_SP)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nud_SoLuong)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -402,8 +374,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Button btn_Huy;
         private Guna.UI2.WinForms.Guna2Button btn_ThemVaoGio;
-        private Guna.UI2.WinForms.Guna2NumericUpDown nud_SoLuong;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
     }
 }

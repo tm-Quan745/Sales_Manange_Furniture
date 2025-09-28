@@ -7,6 +7,7 @@ namespace Sales_Manage_Furniture.config
 {
     internal class DBConnect
     {
+        
         private SqlConnection conn;
 
         public DBConnect()
@@ -15,6 +16,15 @@ namespace Sales_Manage_Furniture.config
             string connectionString = ConfigurationManager.ConnectionStrings["Sales_Manage_Furniture.Properties.Settings.QuanLyNoiThatConnectionString"].ConnectionString;
             conn = new SqlConnection(connectionString);
         }
+        // Constructor dùng login riêng
+        public DBConnect(string sqlLogin, string sqlPass)
+        {
+            string dbName = "QuanLyNoiThat";
+            string server = "."; // hoặc server của bạn
+            string connStr = $"Server={server};Database={dbName};User Id={sqlLogin};Password={sqlPass};";
+            conn = new SqlConnection(connStr);
+        }
+
 
         // Mở kết nối
         public void Open()
@@ -34,8 +44,8 @@ namespace Sales_Manage_Furniture.config
             }
         }
 
-        // Thực hiện câu lệnh SELECT, trả về DataTable
-        public DataTable ExecuteQuery(string query, SqlParameter[] parameters = null)
+        // SELECT → DataTable
+        public DataTable ExecuteQuery(string query, SqlParameter[] parameters = null, CommandType commandType = CommandType.Text)
         {
             DataTable dt = new DataTable();
             try
@@ -43,11 +53,12 @@ namespace Sales_Manage_Furniture.config
                 Open();
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
+                    cmd.CommandType = commandType;   // Cho phép chọn Text hoặc StoredProcedure
                     if (parameters != null)
                         cmd.Parameters.AddRange(parameters);
 
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(dt);
+                     da.Fill(dt);
                 }
             }
             finally
@@ -57,8 +68,8 @@ namespace Sales_Manage_Furniture.config
             return dt;
         }
 
-        // Thực hiện INSERT, UPDATE, DELETE → trả về số dòng bị ảnh hưởng
-        public int ExecuteNonQuery(string query, SqlParameter[] parameters = null)
+        // INSERT, UPDATE, DELETE → số dòng ảnh hưởng
+        public int ExecuteNonQuery(string query, SqlParameter[] parameters = null, CommandType commandType = CommandType.Text)
         {
             int result = 0;
             try
@@ -66,6 +77,7 @@ namespace Sales_Manage_Furniture.config
                 Open();
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
+                    cmd.CommandType = commandType;
                     if (parameters != null)
                         cmd.Parameters.AddRange(parameters);
 
@@ -79,8 +91,8 @@ namespace Sales_Manage_Furniture.config
             return result;
         }
 
-        // Trả về giá trị duy nhất (ví dụ COUNT, MAX, MIN…)
-        public object ExecuteScalar(string query, SqlParameter[] parameters = null)
+        // Trả về giá trị duy nhất
+        public object ExecuteScalar(string query, SqlParameter[] parameters = null, CommandType commandType = CommandType.Text)
         {
             object result = null;
             try
@@ -88,6 +100,7 @@ namespace Sales_Manage_Furniture.config
                 Open();
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
+                    cmd.CommandType = commandType;
                     if (parameters != null)
                         cmd.Parameters.AddRange(parameters);
 

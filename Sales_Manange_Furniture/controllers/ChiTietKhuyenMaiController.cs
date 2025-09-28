@@ -1,4 +1,5 @@
 ﻿using Sales_Manage_Furniture.config;
+using Sales_Manage_Furniture.controllers;
 using Sales_Manange_Furniture.models;
 using System;
 using System.Collections.Generic;
@@ -9,13 +10,22 @@ namespace Sales_Manange_Furniture.controllers
 {
     internal class ChiTietKhuyenMaiController
     {
-        private DBConnect db = new DBConnect();
+
+        DBConnect db;
+        LoginController lgCtrl = new LoginController();
+
+        public ChiTietKhuyenMaiController(string username)
+        {
+            string sqllogin = lgCtrl.GetSqlLogin(username);
+            string sqlpass = lgCtrl.GetSqlPass(username);
+            db = new DBConnect(sqllogin, sqlpass);
+        }
 
         // Load chi tiết KM theo chương trình
         public List<ChiTietKhuyenMai> GetByKhuyenMai(int maKM)
         {
-            string query = "SELECT * FROM ChiTietKhuyenMai WHERE MaKM = @MaKM";
-            var parameters = new[] { new System.Data.SqlClient.SqlParameter("@MaKM", maKM) };
+            string query = "sp_GetChiTietKhuyenMaiByMaKM @MaKM";
+            var parameters = new[] { new SqlParameter("@MaKM", maKM) };
 
             DataTable dt = db.ExecuteQuery(query, parameters);
 
@@ -36,15 +46,7 @@ namespace Sales_Manange_Furniture.controllers
 
         public List<ChiTietKhuyenMai> GetAll()
         {
-            string query = @"
-                SELECT ctkm.MaCTKM, 
-                       ctkm.MaKM, km.TenKM, 
-                       ctkm.MaSP, sp.TenSP,ctkm.KieuKM, 
-                       ctkm.GiaTriApDung
-                FROM ChiTietKhuyenMai ctkm
-                INNER JOIN KhuyenMai km ON ctkm.MaKM = km.MaKM
-                INNER JOIN SanPham sp ON ctkm.MaSP = sp.MaSP";
-
+            string query = "sp_GetAllChiTietKhuyenMai";
             DataTable dt = db.ExecuteQuery(query);
             List<ChiTietKhuyenMai> list = new List<ChiTietKhuyenMai>();
 
@@ -72,27 +74,20 @@ namespace Sales_Manange_Furniture.controllers
         // Thêm chi tiết KM
         public int Insert(ChiTietKhuyenMai ctkm)
         {
-            string query = @"INSERT INTO ChiTietKhuyenMai (MaKM, MaSP, KieuKM, GiaTriApDung)
-                     VALUES (@MaKM, @MaSP, @KieuKM, @GiaTriApDung)";
-
+           
             var parameters = new[]
             {
                 new SqlParameter("@MaKM", ctkm.MaKM),
                 new SqlParameter("@MaSP", ctkm.MaSP),
-                new SqlParameter("@KieuKM", ctkm.KieuKM ?? (object)DBNull.Value), // tránh null
+                new SqlParameter("@KieuKM", ctkm.KieuKM ?? (object)DBNull.Value),
                 new SqlParameter("@GiaTriApDung", ctkm.GiaTriApDung)
             };
 
-            return db.ExecuteNonQuery(query, parameters);
+            return db.ExecuteNonQuery("sp_InsertChiTietKhuyenMai", parameters, CommandType.StoredProcedure);
         }
 
         public int Update(ChiTietKhuyenMai ctkm)
         {
-            string query = @"UPDATE ChiTietKhuyenMai
-                     SET KieuKM = @KieuKM,
-                         GiaTriApDung = @GiaTriApDung
-                     WHERE MaKM = @MaKM AND MaSP = @MaSP";
-
             var parameters = new[]
             {
                 new SqlParameter("@KieuKM", ctkm.KieuKM),
@@ -101,40 +96,43 @@ namespace Sales_Manange_Furniture.controllers
                 new SqlParameter("@MaSP", ctkm.MaSP)
             };
 
-            return db.ExecuteNonQuery(query, parameters);
+            return db.ExecuteNonQuery("sp_UpdateChiTietKhuyenMai", parameters, CommandType.StoredProcedure);
         }
 
         public int Delete(int maKM, int maSP)
         {
-            string query = @"DELETE FROM ChiTietKhuyenMai 
-                     WHERE MaKM = @MaKM AND MaSP = @MaSP";
-
             var parameters = new[]
             {
                 new SqlParameter("@MaKM", maKM),
                 new SqlParameter("@MaSP", maSP)
             };
 
-            return db.ExecuteNonQuery(query, parameters);
+            return db.ExecuteNonQuery("sp_DeleteChiTietKhuyenMai", parameters, CommandType.StoredProcedure);
         }
 
         public DataTable Search(string keyword)
         {
-            string query = @"
-                SELECT ctkm.MaKM, km.TenKM, ctkm.MaSP, sp.TenSP, 
-                       ctkm.KieuKM, ctkm.GiaTriApDung
-                FROM ChiTietKhuyenMai ctkm
-                INNER JOIN KhuyenMai km ON ctkm.MaKM = km.MaKM
-                INNER JOIN SanPham sp ON ctkm.MaSP = sp.MaSP
-                WHERE km.TenKM LIKE @Keyword OR sp.TenSP LIKE @Keyword";
-
-            var parameters = new[]
+            var parameters = new[]  
             {
-                new SqlParameter("@Keyword", "%" + keyword + "%")
+                new SqlParameter("@Keyword", "%" + keyword + "%") 
             };
 
-            return db.ExecuteQuery(query, parameters);
+            return db.ExecuteQuery("sp_SearchChiTietKhuyenMai", parameters, CommandType.StoredProcedure);
+        }
+
+        public decimal GetDiscountForProduct(int maSP, DateTime ngayApDung)
+        {
+            string query = "SELECT dbo.fn_GetDiscountForProduct(@MaSP, @NgayApDung)";
+            var parameters = new[]
+            {
+                new SqlParameter("@MaSP", maSP),
+                new SqlParameter("@NgayApDung", ngayApDung)
+            };
+
+            object result = db.ExecuteScalar(query, parameters);
+            return result != DBNull.Value ? Convert.ToDecimal(result) : 0;
         }
 
     }
 }
+ 

@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
@@ -68,6 +71,8 @@
     <Compile Include="controllers\KhuyenMaiController.cs" />
     <Compile Include="controllers\LoginController.cs" />
     <Compile Include="controllers\SanPhamController.cs" />
+    <Compile Include="models\Session.cs" />
+    <Compile Include="controllers\SessionManager.cs" />
     <Compile Include="controllers\ThongKeController.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -136,6 +141,12 @@
     </Compile>
     <Compile Include="views\FSanPham.Designer.cs">
       <DependentUpon>FSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FThanhToan.Designer.cs">
+      <DependentUpon>FThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="views\FTimKiemKhuyenMai.cs">
       <SubType>Form</SubType>
@@ -231,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\FSanPham.resx">
       <DependentUpon>FSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FThanhToan.resx">
+      <DependentUpon>FThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FTimKiemKhuyenMai.resx">
       <DependentUpon>FTimKiemKhuyenMai.cs</DependentUpon>
@@ -356,6 +370,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <None Include="images\KhuyenMai.png" />
@@ -377,6 +392,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\reload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\eye-off 2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

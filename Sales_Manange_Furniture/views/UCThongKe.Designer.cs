@@ -36,16 +36,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlChart = new Guna.UI2.WinForms.Guna2Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.chartRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnlRevenue = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txt_DoanhThu = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlRecent = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.dgv_DonHangGanDay = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_DoanhThu = new System.Windows.Forms.Label();
+            this.lbl_TyLe = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlChart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).BeginInit();
             this.pnlRevenue.SuspendLayout();
@@ -69,6 +69,18 @@
             this.pnlChart.Size = new System.Drawing.Size(941, 398);
             this.pnlChart.TabIndex = 5;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
+            this.label1.Location = new System.Drawing.Point(28, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(483, 32);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Biểu đô tổng doanh thu theo tháng";
+            // 
             // chartRevenue
             // 
             chartArea5.Name = "ChartArea1";
@@ -88,8 +100,8 @@
             // pnlRevenue
             // 
             this.pnlRevenue.BorderRadius = 16;
-            this.pnlRevenue.Controls.Add(this.guna2TextBox1);
-            this.pnlRevenue.Controls.Add(this.txt_DoanhThu);
+            this.pnlRevenue.Controls.Add(this.lbl_TyLe);
+            this.pnlRevenue.Controls.Add(this.lbl_DoanhThu);
             this.pnlRevenue.Controls.Add(this.label2);
             this.pnlRevenue.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
             this.pnlRevenue.Location = new System.Drawing.Point(1096, 104);
@@ -97,57 +109,6 @@
             this.pnlRevenue.Name = "pnlRevenue";
             this.pnlRevenue.Size = new System.Drawing.Size(512, 398);
             this.pnlRevenue.TabIndex = 6;
-            // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.White;
-            this.guna2TextBox1.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDotDot;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(142, 201);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PlaceholderText = "tăng hay giam";
-            this.guna2TextBox1.ReadOnly = true;
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(225, 57);
-            this.guna2TextBox1.TabIndex = 2;
-            this.guna2TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txt_DoanhThu
-            // 
-            this.txt_DoanhThu.BackColor = System.Drawing.Color.Transparent;
-            this.txt_DoanhThu.BorderColor = System.Drawing.Color.White;
-            this.txt_DoanhThu.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDotDot;
-            this.txt_DoanhThu.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_DoanhThu.DefaultText = "";
-            this.txt_DoanhThu.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_DoanhThu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_DoanhThu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_DoanhThu.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_DoanhThu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.txt_DoanhThu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_DoanhThu.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_DoanhThu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_DoanhThu.Location = new System.Drawing.Point(12, 109);
-            this.txt_DoanhThu.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
-            this.txt_DoanhThu.Name = "txt_DoanhThu";
-            this.txt_DoanhThu.PlaceholderText = "10000000000";
-            this.txt_DoanhThu.ReadOnly = true;
-            this.txt_DoanhThu.SelectedText = "";
-            this.txt_DoanhThu.Size = new System.Drawing.Size(473, 88);
-            this.txt_DoanhThu.TabIndex = 1;
-            this.txt_DoanhThu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_DoanhThu.TextChanged += new System.EventHandler(this.txt_DoanhThu_TextChanged);
             // 
             // label2
             // 
@@ -263,17 +224,28 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Đơn hàng gần đây";
             // 
-            // label1
+            // lbl_DoanhThu
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
-            this.label1.Location = new System.Drawing.Point(28, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(483, 32);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Biểu đô tổng doanh thu theo tháng";
+            this.lbl_DoanhThu.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_DoanhThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DoanhThu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbl_DoanhThu.Location = new System.Drawing.Point(86, 158);
+            this.lbl_DoanhThu.Name = "lbl_DoanhThu";
+            this.lbl_DoanhThu.Size = new System.Drawing.Size(423, 51);
+            this.lbl_DoanhThu.TabIndex = 3;
+            this.lbl_DoanhThu.Text = "100,000,000";
+            this.lbl_DoanhThu.UseCompatibleTextRendering = true;
+            // 
+            // lbl_TyLe
+            // 
+            this.lbl_TyLe.AutoSize = false;
+            this.lbl_TyLe.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_TyLe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TyLe.Location = new System.Drawing.Point(206, 223);
+            this.lbl_TyLe.Name = "lbl_TyLe";
+            this.lbl_TyLe.Size = new System.Drawing.Size(217, 26);
+            this.lbl_TyLe.TabIndex = 4;
+            this.lbl_TyLe.Text = " tăng thêm 10 %";
             // 
             // UCThongKe
             // 
@@ -308,8 +280,8 @@
         private Guna.UI2.WinForms.Guna2DataGridView dgv_DonHangGanDay;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartRevenue;
-        private Guna.UI2.WinForms.Guna2TextBox txt_DoanhThu;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbl_TyLe;
+        private System.Windows.Forms.Label lbl_DoanhThu;
     }
 }

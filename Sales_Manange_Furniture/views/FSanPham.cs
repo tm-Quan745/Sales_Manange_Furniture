@@ -17,7 +17,6 @@ namespace Sales_Manange_Furniture.views
     {
         SanPham _sp = new SanPham();
         public int SelectedMaSP { get; private set; }
-        public int SelectedSoLuong { get; private set; }
         public FSanPham()
         {
             InitializeComponent();
@@ -52,7 +51,6 @@ namespace Sales_Manange_Furniture.views
         private void btn_ThemVaoGio_Click(object sender, EventArgs e)
         {
             // TODO: thêm sản phẩm vào giỏ hàng ở đây
-            SelectedSoLuong = Convert.ToInt32(txt_SoLuong.Text);
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

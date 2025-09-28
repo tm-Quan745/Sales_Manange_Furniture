@@ -16,10 +16,12 @@ namespace Sales_Manange_Furniture.views
 {
     public partial class UCKhachHang : UserControl
     {
-        KhachHangController khCtrl = new KhachHangController();
+        KhachHangController khCtrl;
+        LoginController lgCtrl = new LoginController();
         public UCKhachHang()
         {
             InitializeComponent();
+            khCtrl = new KhachHangController(lgCtrl.USER_NAME);
         }
 
         private void btn_Them_Click(object sender, EventArgs e)
@@ -57,7 +59,7 @@ namespace Sales_Manange_Furniture.views
                 return;
             }
 
-            List<KhachHang> result = khCtrl.Search(input); // Search theo tên, SĐT, Email
+            List<KhachHang> result = khCtrl.search(input); // Search theo tên, SĐT, Email
 
             dgv_KhachHang.DataSource = result.Count > 0 ? result : null;
 

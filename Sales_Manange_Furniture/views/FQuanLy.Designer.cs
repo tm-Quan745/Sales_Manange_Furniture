@@ -41,15 +41,28 @@
             this.btn_HoaDon = new Guna.UI2.WinForms.Guna2Button();
             this.btn_ThongKe = new Guna.UI2.WinForms.Guna2Button();
             this.btn_KhuyenMai = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pnl_Main.SuspendLayout();
             this.pnl_Topbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.pnl_Sidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Main
             // 
             this.pnl_Main.BackColor = System.Drawing.Color.White;
+            this.pnl_Main.Controls.Add(this.pictureBox3);
+            this.pnl_Main.Controls.Add(this.label3);
+            this.pnl_Main.Controls.Add(this.label2);
+            this.pnl_Main.Controls.Add(this.label1);
+            this.pnl_Main.Controls.Add(this.pictureBox1);
             this.pnl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Main.Location = new System.Drawing.Point(210, 116);
             this.pnl_Main.Name = "pnl_Main";
@@ -78,8 +91,8 @@
             this.btn_DangXuat.FillColor = System.Drawing.Color.Transparent;
             this.btn_DangXuat.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DangXuat.ForeColor = System.Drawing.Color.Black;
-            this.btn_DangXuat.HoverState.BorderColor = System.Drawing.Color.White;
-            this.btn_DangXuat.HoverState.FillColor = System.Drawing.Color.White;
+            this.btn_DangXuat.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.btn_DangXuat.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
             this.btn_DangXuat.HoverState.ForeColor = System.Drawing.Color.Red;
             this.btn_DangXuat.HoverState.Image = global::Sales_Manange_Furniture.Properties.Resources.logoutdo;
             this.btn_DangXuat.Image = global::Sales_Manange_Furniture.Properties.Resources.logout;
@@ -91,6 +104,7 @@
             this.btn_DangXuat.TabIndex = 23;
             this.btn_DangXuat.Text = "Đăng xuất";
             this.btn_DangXuat.Tile = true;
+            this.btn_DangXuat.Click += new System.EventHandler(this.btn_DangXuat_Click);
             // 
             // txt_VaiTro
             // 
@@ -276,6 +290,61 @@
             this.btn_KhuyenMai.TextOffset = new System.Drawing.Point(-18, 40);
             this.btn_KhuyenMai.Click += new System.EventHandler(this.btn_KhuyenMai_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = global::Sales_Manange_Furniture.Properties.Resources._4e80d9de_5ed3_4ee7_8d66_5903f4dc7466;
+            this.pictureBox1.Location = new System.Drawing.Point(82, 95);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1098, 726);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("UVN Bay Buom Nang", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Maroon;
+            this.label3.Location = new System.Drawing.Point(881, 118);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(299, 102);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "HQ2T";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("UVN Bay Buom", 31.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
+            this.label2.Location = new System.Drawing.Point(631, 289);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(1026, 69);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "với những sản phẩm nội thất đẳng cấp\".";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("UVN Bay Buom", 31.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
+            this.label1.Location = new System.Drawing.Point(677, 220);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(923, 69);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "\" Tạo nên không gian sống lý tưởng";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Image = global::Sales_Manange_Furniture.Properties.Resources.logo1;
+            this.pictureBox3.Location = new System.Drawing.Point(1186, 459);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(255, 220);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 12;
+            this.pictureBox3.TabStop = false;
+            // 
             // FQuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -287,11 +356,16 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FQuanLy";
             this.Text = "    ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FQuanLy_Load);
+            this.pnl_Main.ResumeLayout(false);
+            this.pnl_Main.PerformLayout();
             this.pnl_Topbar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.pnl_Sidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -310,5 +384,10 @@
         private Guna.UI2.WinForms.Guna2Button btn_ThongKe;
         private Guna.UI2.WinForms.Guna2Button btn_KhuyenMai;
         private Guna.UI2.WinForms.Guna2Button btn_BanHang;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

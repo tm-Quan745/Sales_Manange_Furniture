@@ -10,15 +10,20 @@ namespace Sales_Manage_Furniture.controllers
 {
     internal class HoaDonController
     {
-        private DBConnect db = new DBConnect();
+        private DBConnect db;
+        private LoginController lgCtrl;
+        public HoaDonController(string username)
+        {
+            lgCtrl = new LoginController();
+            string sqlLogin = lgCtrl.GetSqlLogin(username);
+            string sqlPass = lgCtrl.GetSqlPass(username);
+            db = new DBConnect(sqlLogin, sqlPass);
+        }
 
         // Lấy tất cả hóa đơn
         public List<HoaDon> GetAll()
         {
-            string query = "SELECT * FROM HoaDonBan";
-
-            ;
-            DataTable dt = db.ExecuteQuery(query);
+            DataTable dt = db.ExecuteQuery("sp_GetAllHoaDon");
             List<HoaDon> list = new List<HoaDon>();
 
             foreach (DataRow row in dt.Rows)
@@ -40,69 +45,72 @@ namespace Sales_Manage_Furniture.controllers
             return list;
         }
 
+        public int ThemHoaDonFull(HoaDon hd, DataTable chiTiet)
+        {
+            SqlParameter[] parameters =
+            {
+            new SqlParameter("@MaKH", hd.MaKH),
+            new SqlParameter("@MaNV", hd.MaNV),
+            new SqlParameter("@NgayBan", hd.NgayBan),
+            new SqlParameter("@TienTamTinh", hd.TienTamTinh),
+            new SqlParameter("@ThueVAT", hd.ThueVAT),
+            new SqlParameter("@ChietKhau", hd.ChietKhau),
+            new SqlParameter("@TongTien", hd.TongTien),
+            new SqlParameter("@TrangThai", hd.TrangThai),
+            new SqlParameter("@ChiTietHoaDon", SqlDbType.Structured)
+            {
+                TypeName = "dbo.CTHoaDonType",
+                Value = chiTiet
+            }
+        };
+
+            object result = db.ExecuteScalar("sp_InsertHoaDonFull", parameters, CommandType.StoredProcedure);
+            return Convert.ToInt32(result);
+        }
+
+
         // Thêm hóa đơn mới
-        public bool Insert(HoaDon hd)
+        public int InsertAndReturnId(HoaDon hd)
         {
-            string query = @"INSERT INTO HoaDonBan(MaKH, MaNV, NgayBan, TienTamTinh, ThueVAT, ChietKhau, TongTien, TrangThai) 
-                             VALUES (@makh, @manv, @ngayban, @TienTamTinh, @vat, @chietkhau, @tongtien, @trangthai)";
             SqlParameter[] parameters =
             {
-                new SqlParameter("@makh", hd.MaKH),
-                new SqlParameter("@manv", hd.MaNV),
-                new SqlParameter("@ngayban", hd.NgayBan),
+                new SqlParameter("@MaKH", hd.MaKH),
+                new SqlParameter("@MaNV", hd.MaNV),
+                new SqlParameter("@NgayBan", hd.NgayBan),
                 new SqlParameter("@TienTamTinh", hd.TienTamTinh),
-                new SqlParameter("@vat", hd.ThueVAT),
-                new SqlParameter("@chietkhau", hd.ChietKhau),
-                new SqlParameter("@tongtien", hd.TongTien),
-                new SqlParameter("@trangthai", hd.TrangThai)
+                new SqlParameter("@ThueVAT", hd.ThueVAT),
+                new SqlParameter("@ChietKhau", hd.ChietKhau),
+                new SqlParameter("@TongTien", hd.TongTien),
+                new SqlParameter("@TrangThai", hd.TrangThai),
+                new SqlParameter("@NewMaHDB", SqlDbType.Int) { Direction = ParameterDirection.Output }
             };
 
-            return db.ExecuteNonQuery(query, parameters) > 0;
+            db.ExecuteNonQuery("sp_InsertHoaDon", parameters, CommandType.StoredProcedure);
+
+            return (int)parameters[8].Value; // vị trí 8 là @NewMaHDB
         }
 
-        // Cập nhật hóa đơn
-        public bool Update(HoaDon hd)
+
+        // Cập nhật trạng thái hóa đơn
+        public bool UpdateTrangThaiHD(int maHDB, string trangThai)
         {
-            string query = @"UPDATE HoaDonBan 
-                             SET MaKH=@makh, MaNV=@manv, NgayBan=@ngayban,
-                                 TienTamTinh=@TienTamTinh, ThueVAT=@vat, MaKM=@MaKM, TongTien=@tongtien, TrangThai=@trangthai
-                             WHERE MaHDB=@mahdb";
             SqlParameter[] parameters =
             {
-                new SqlParameter("@makh", hd.MaKH),
-                new SqlParameter("@manv", hd.MaNV),
-                new SqlParameter("@ngayban", hd.NgayBan),
-                new SqlParameter("@TienTamTinh", hd.TienTamTinh),
-                new SqlParameter("@vat", hd.ThueVAT),
-                new SqlParameter("@tongtien", hd.TongTien),
-                new SqlParameter("@trangthai", hd.TrangThai),
-                new SqlParameter("@mahdb", hd.MaHDB)
+                new SqlParameter("@MaHDB", maHDB),
+                new SqlParameter("@TrangThai", trangThai)
             };
-
-            return db.ExecuteNonQuery(query, parameters) > 0;
-        }
-
-        // Xóa hóa đơn
-        public bool Delete(int maHDB)
-        {
-            string query = "DELETE FROM HoaDonBan WHERE MaHDB=@mahdb";
-            SqlParameter[] parameters =
-            {
-                new SqlParameter("@mahdb", maHDB)
-            };
-
-            return db.ExecuteNonQuery(query, parameters) > 0;
+            int rowsAffected = db.ExecuteNonQuery("sp_UpdateTrangThaiHoaDon", parameters, CommandType.StoredProcedure);
+            return rowsAffected > 0;
         }
 
         // Lấy hóa đơn theo ID
         public HoaDon GetById(int maHDB)
         {
-            string query = "SELECT * FROM HoaDonBan WHERE MaHDB=@mahdb";
             SqlParameter[] parameters =
             {
                 new SqlParameter("@mahdb", maHDB)
             };
-            DataTable dt = db.ExecuteQuery(query, parameters);
+            DataTable dt = db.ExecuteQuery("sp_GetHoaDonByID", parameters, CommandType.StoredProcedure);
             if (dt.Rows.Count > 0)
             {
                 DataRow row = dt.Rows[0];
@@ -129,14 +137,12 @@ namespace Sales_Manage_Furniture.controllers
         // Tìm hóa đơn theo mã hóa đơn
         public HoaDon Search(int maHDB)
         {
-            string query = @"SELECT * FROM HoaDonBan WHERE MaHDB = @mahdb";
-
             SqlParameter[] parameters =
             {
         new SqlParameter("@mahdb", maHDB)
     };
 
-            DataTable dt = db.ExecuteQuery(query, parameters);
+            DataTable dt = db.ExecuteQuery("sp_SearchHoaDon", parameters, CommandType.StoredProcedure);
 
             if (dt.Rows.Count > 0)
             {
@@ -159,20 +165,12 @@ namespace Sales_Manage_Furniture.controllers
         }
         public List<HoaDon> Search(string keyword)
         {
-            string query = @"
-            SELECT hd.* 
-            FROM HoaDonBan hd
-            INNER JOIN KhachHang kh ON hd.MaKH = kh.MaKH
-            WHERE kh.TenKH LIKE @keyword 
-               OR kh.SDT LIKE @keyword 
-               OR kh.Email LIKE @keyword";
-
             SqlParameter[] parameters =
             {
-        new SqlParameter("@keyword", "%" + keyword + "%")
-    };
+                new SqlParameter("@keyword", "%" + keyword + "%")
+            };
 
-            DataTable dt = db.ExecuteQuery(query, parameters);
+            DataTable dt = db.ExecuteQuery("sp_SearchHoaDon", parameters, CommandType.StoredProcedure);
 
             List<HoaDon> result = new List<HoaDon>();
 

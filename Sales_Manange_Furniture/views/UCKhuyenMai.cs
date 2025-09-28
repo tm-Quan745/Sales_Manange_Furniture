@@ -12,16 +12,20 @@ using Sales_Manage_Furniture.models;
 using Sales_Manange_Furniture.models;
 using System.Data.SqlClient;
 using Guna.UI2.AnimatorNS;
+using Sales_Manage_Furniture.controllers;
 
 namespace Sales_Manange_Furniture.views
 {
     public partial class UCKhuyenMai : UserControl
     {
-        KhuyenMaiController kmCtrl = new KhuyenMaiController();
-        ChiTietKhuyenMaiController ctkmCtrl = new ChiTietKhuyenMaiController();
+        LoginController loginCtrl = new LoginController();
+        KhuyenMaiController kmCtrl;
+        ChiTietKhuyenMaiController ctkmCtrl ;
         public UCKhuyenMai()
         {
             InitializeComponent();
+            kmCtrl = new KhuyenMaiController(loginCtrl.USER_NAME);
+            ctkmCtrl = new ChiTietKhuyenMaiController(loginCtrl.USER_NAME);
         }
 
         private void tp_KhuyenMai_Click(object sender, EventArgs e)
@@ -89,7 +93,7 @@ namespace Sales_Manange_Furniture.views
                 if (row.Cells["col_TrangThai"].Value != null)
                 {
                     bool trangThai = Convert.ToBoolean(row.Cells["col_TrangThai"].Value);
-                    cbb_TrangThai.Text = trangThai ? "Đang hoạt động" : "Ngừng";
+                    cbb_TrangThai.Text = trangThai ? "Hoạt động" : "Ngừng";
                 }
 
                 rtb_MoTa.Text = row.Cells["col_MoTa"].Value?.ToString();
@@ -138,6 +142,7 @@ namespace Sales_Manange_Furniture.views
             btn_Huy.Enabled = true;
             btn_Sua.Enabled = false;
             btn_Xoa.Enabled = false;
+            
         }
 
         private void btn_Sua_Click(object sender, EventArgs e)
@@ -166,7 +171,7 @@ namespace Sales_Manange_Furniture.views
                 }
 
                 // Convert combobox về bool
-                bool trangThai = cbb_TrangThai.Text == "Đang áp dụng";
+                bool trangThai = cbb_TrangThai.Text == "Hoạt động";
                 // Tạo đối tượng KhuyenMai
                 KhuyenMai km = new KhuyenMai
                 {
@@ -187,6 +192,7 @@ namespace Sales_Manange_Furniture.views
                 {
                     MessageBox.Show("Cập nhật khuyến mãi thành công!");
                     LoadKhuyenMai();
+                    LoadChiTietKhuyenMai();
                 }
                 else
                 {
@@ -223,6 +229,7 @@ namespace Sales_Manange_Furniture.views
                     {
                         MessageBox.Show("Xóa khuyến mãi thành công!");
                         LoadKhuyenMai();
+                        LoadChiTietKhuyenMai();
                         // Xoá dữ liệu trong form
                         txt_MaKM.Clear();
                         txt_TenCT.Clear();
@@ -297,7 +304,7 @@ namespace Sales_Manange_Furniture.views
                 }
 
                 // Chuyển đổi trạng thái từ combobox -> bool
-                bool trangThai = (trangThaiStr == "Đang hoạt động");
+                bool trangThai = (trangThaiStr == "Hoạt động");
 
                 // Tạo đối tượng KhuyenMai
                 KhuyenMai km = new KhuyenMai
@@ -318,7 +325,7 @@ namespace Sales_Manange_Furniture.views
                 {
                     MessageBox.Show("Thêm khuyến mãi thành công!");
                     LoadKhuyenMai();
-
+                    LoadChiTietKhuyenMai() ;
                     // Xoá dữ liệu trong form
                     txt_MaKM.Clear();
                     txt_TenCT.Clear();

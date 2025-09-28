@@ -14,7 +14,8 @@ namespace Sales_Manange_Furniture.views
 {
     public partial class FHoaDon : Form
     {
-        KhachHangController khCtrl = new KhachHangController();
+        KhachHangController khCtrl;
+        LoginController lgCtrl = new LoginController();
         HoaDon _hd = new HoaDon();
         List<ChiTietHDB> _ct = new List<ChiTietHDB>();
         KhachHang KhachHang = new KhachHang();
@@ -25,6 +26,7 @@ namespace Sales_Manange_Furniture.views
         public FHoaDon(HoaDon hd,List<ChiTietHDB> ct)
         {
             InitializeComponent();
+            khCtrl = new KhachHangController(lgCtrl.USER_NAME);
             _hd = hd;
             _ct = ct;
         }

@@ -1,4 +1,5 @@
-﻿using Sales_Manage_Furniture.models;
+﻿using System;
+using Sales_Manage_Furniture.models;
 
 namespace Sales_Manange_Furniture
 {
@@ -31,7 +32,7 @@ namespace Sales_Manange_Furniture
         private void InitializeComponent()
         {
             this.topbar1 = new Sales_Manange_Furniture.Topbar();
-            this.ucBanHang1 = new Sales_Manange_Furniture.views.UCBanHang(new NhanVien());
+            this.ucBanHang1 = new Sales_Manange_Furniture.views.UCBanHang(new NhanVien(),new Int32());
             this.sidebar1 = new Sales_Manange_Furniture.Sidebar();
             this.SuspendLayout();
             // 

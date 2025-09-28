@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FLogin));
             this.txt_username = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Shapes2 = new Guna.UI2.WinForms.Guna2Shapes();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.phide = new System.Windows.Forms.PictureBox();
             this.guna2Shapes3 = new Guna.UI2.WinForms.Guna2Shapes();
+            this.pshow = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_passwd = new Guna.UI2.WinForms.Guna2TextBox();
             this.btn_login = new Guna.UI2.WinForms.Guna2Button();
@@ -43,15 +46,13 @@
             this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.phide = new System.Windows.Forms.PictureBox();
-            this.pshow = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pshow)).BeginInit();
+            this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -130,6 +131,19 @@
             this.panel2.Size = new System.Drawing.Size(524, 110);
             this.panel2.TabIndex = 6;
             // 
+            // phide
+            // 
+            this.phide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
+            this.phide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.phide.ErrorImage = null;
+            this.phide.Image = global::Sales_Manange_Furniture.Properties.Resources.eye_1;
+            this.phide.Location = new System.Drawing.Point(467, 45);
+            this.phide.Name = "phide";
+            this.phide.Size = new System.Drawing.Size(50, 50);
+            this.phide.TabIndex = 8;
+            this.phide.TabStop = false;
+            this.phide.Click += new System.EventHandler(this.phide_Click);
+            // 
             // guna2Shapes3
             // 
             this.guna2Shapes3.BorderColor = System.Drawing.Color.White;
@@ -143,6 +157,18 @@
             this.guna2Shapes3.TabIndex = 5;
             this.guna2Shapes3.Text = "guna2Shapes3";
             this.guna2Shapes3.Zoom = 100;
+            // 
+            // pshow
+            // 
+            this.pshow.BackColor = System.Drawing.Color.Transparent;
+            this.pshow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pshow.Image = global::Sales_Manange_Furniture.Properties.Resources.eye_off_2;
+            this.pshow.Location = new System.Drawing.Point(467, 45);
+            this.pshow.Name = "pshow";
+            this.pshow.Size = new System.Drawing.Size(50, 50);
+            this.pshow.TabIndex = 7;
+            this.pshow.TabStop = false;
+            this.pshow.Click += new System.EventHandler(this.pshow_Click);
             // 
             // label2
             // 
@@ -305,29 +331,6 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "Công ty TNHH nội thất nhà đẹp";
             // 
-            // phide
-            // 
-            this.phide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
-            this.phide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.phide.Image = global::Sales_Manange_Furniture.Properties.Resources.eye_1;
-            this.phide.Location = new System.Drawing.Point(467, 45);
-            this.phide.Name = "phide";
-            this.phide.Size = new System.Drawing.Size(50, 50);
-            this.phide.TabIndex = 8;
-            this.phide.TabStop = false;
-            this.phide.Click += new System.EventHandler(this.phide_Click);
-            // 
-            // pshow
-            // 
-            this.pshow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
-            this.pshow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pshow.Location = new System.Drawing.Point(467, 45);
-            this.pshow.Name = "pshow";
-            this.pshow.Size = new System.Drawing.Size(50, 50);
-            this.pshow.TabIndex = 7;
-            this.pshow.TabStop = false;
-            this.pshow.Click += new System.EventHandler(this.pshow_Click);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(74)))), ((int)(((byte)(98)))));
@@ -367,19 +370,21 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.guna2Shapes1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FLogin";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.guna2GroupBox1.ResumeLayout(false);
-            this.guna2GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phide)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pshow)).EndInit();
+            this.guna2GroupBox1.ResumeLayout(false);
+            this.guna2GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

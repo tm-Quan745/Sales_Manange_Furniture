@@ -25,6 +25,7 @@ namespace Sales_Manage_Furniture.views
         private UCKhachHang ucKhachHang;
         private UCSanPham ucSanPham;
         private UCHoaDon ucHoaDon;
+        private UCKhuyenMai ucKhuyenMai;
 
         public FNhanVien()
         {
@@ -67,7 +68,7 @@ namespace Sales_Manage_Furniture.views
 
         private void btn_BanHang_Click(object sender, EventArgs e)
         {
-            if (ucBanHang == null) ucBanHang = new UCBanHang(_nv);
+            if (ucBanHang == null) ucBanHang = new UCBanHang(_nv,1);
             LoadTab(ucBanHang);
             ActivateButton(btn_BanHang);
         }
@@ -111,21 +112,22 @@ namespace Sales_Manage_Furniture.views
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
             );
-
-            if (result == DialogResult.Yes)
-            {
-                this.Hide();
-                FLogin login = new FLogin();
-                login.ShowDialog();
-                this.Close();
-            }
+            Session.Clear();
+            this.Close();
         }
 
-        public void ChuyenSangTabGioHang()
+        public void ChuyenSangTabGioHang(int maSP)
         {
-            if (ucBanHang == null) ucBanHang = new UCBanHang(_nv);
+            if (ucBanHang == null) ucBanHang = new UCBanHang(_nv,maSP);
             LoadTab(ucBanHang);
             ActivateButton(btn_BanHang);
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            if (ucKhuyenMai == null) ucKhuyenMai = new UCKhuyenMai();
+            LoadTab(ucKhuyenMai);
+            ActivateButton(guna2Button1);
         }
     }
 

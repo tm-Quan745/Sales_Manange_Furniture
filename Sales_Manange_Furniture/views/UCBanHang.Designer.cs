@@ -68,14 +68,14 @@
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btn_LamMoi = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_Tim = new Guna.UI2.WinForms.Guna2Button();
             this.col_TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_SoLuongb = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_KM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_Tong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_VAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_MaKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
@@ -115,7 +115,7 @@
             this.txt_TimSP.Name = "txt_TimSP";
             this.txt_TimSP.PlaceholderText = "";
             this.txt_TimSP.SelectedText = "";
-            this.txt_TimSP.Size = new System.Drawing.Size(340, 42);
+            this.txt_TimSP.Size = new System.Drawing.Size(293, 42);
             this.txt_TimSP.TabIndex = 2;
             // 
             // guna2Panel1
@@ -124,6 +124,8 @@
             this.guna2Panel1.BorderColor = System.Drawing.Color.Silver;
             this.guna2Panel1.BorderRadius = 10;
             this.guna2Panel1.BorderThickness = 1;
+            this.guna2Panel1.Controls.Add(this.btn_LamMoi);
+            this.guna2Panel1.Controls.Add(this.btn_Tim);
             this.guna2Panel1.Controls.Add(this.guna2CustomGradientPanel2);
             this.guna2Panel1.Controls.Add(this.guna2GradientPanel1);
             this.guna2Panel1.Controls.Add(this.txt_TimSP);
@@ -320,9 +322,7 @@
             this.col_SoLuongb,
             this.col_KM,
             this.col_Tong,
-            this.col_VAT,
-            this.col_MaSP,
-            this.col_MaKM});
+            this.col_MaSP});
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -527,8 +527,9 @@
             this.btn_TimKH.Image = global::Sales_Manange_Furniture.Properties.Resources.customerden;
             this.btn_TimKH.Location = new System.Drawing.Point(626, 99);
             this.btn_TimKH.Name = "btn_TimKH";
-            this.btn_TimKH.Size = new System.Drawing.Size(69, 43);
+            this.btn_TimKH.Size = new System.Drawing.Size(107, 43);
             this.btn_TimKH.TabIndex = 82;
+            this.btn_TimKH.Text = "Kiểm tra";
             this.btn_TimKH.Click += new System.EventHandler(this.btn_TimKH_Click);
             // 
             // txt_TenKH
@@ -631,6 +632,44 @@
             this.guna2HtmlLabel6.TabIndex = 58;
             this.guna2HtmlLabel6.Text = "Tên khách hàng*:";
             // 
+            // btn_LamMoi
+            // 
+            this.btn_LamMoi.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_LamMoi.BorderRadius = 10;
+            this.btn_LamMoi.BorderThickness = 1;
+            this.btn_LamMoi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_LamMoi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_LamMoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_LamMoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_LamMoi.FillColor = System.Drawing.Color.White;
+            this.btn_LamMoi.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_LamMoi.ForeColor = System.Drawing.Color.Black;
+            this.btn_LamMoi.Image = global::Sales_Manange_Furniture.Properties.Resources.reload;
+            this.btn_LamMoi.Location = new System.Drawing.Point(678, 84);
+            this.btn_LamMoi.Name = "btn_LamMoi";
+            this.btn_LamMoi.Size = new System.Drawing.Size(67, 43);
+            this.btn_LamMoi.TabIndex = 83;
+            this.btn_LamMoi.Click += new System.EventHandler(this.btn_LamMoi_Click);
+            // 
+            // btn_Tim
+            // 
+            this.btn_Tim.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_Tim.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_Tim.BorderRadius = 10;
+            this.btn_Tim.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Tim.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Tim.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Tim.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Tim.FillColor = System.Drawing.SystemColors.Highlight;
+            this.btn_Tim.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_Tim.ForeColor = System.Drawing.Color.Black;
+            this.btn_Tim.Image = global::Sales_Manange_Furniture.Properties.Resources.iconsearch1;
+            this.btn_Tim.Location = new System.Drawing.Point(577, 84);
+            this.btn_Tim.Name = "btn_Tim";
+            this.btn_Tim.Size = new System.Drawing.Size(95, 43);
+            this.btn_Tim.TabIndex = 82;
+            this.btn_Tim.Click += new System.EventHandler(this.btn_Tim_Click);
+            // 
             // col_TenSP
             // 
             this.col_TenSP.DataPropertyName = "TenSP";
@@ -666,23 +705,11 @@
             this.col_Tong.MinimumWidth = 6;
             this.col_Tong.Name = "col_Tong";
             // 
-            // col_VAT
-            // 
-            this.col_VAT.HeaderText = "Thue";
-            this.col_VAT.MinimumWidth = 6;
-            this.col_VAT.Name = "col_VAT";
-            // 
             // col_MaSP
             // 
             this.col_MaSP.HeaderText = "MaSP";
             this.col_MaSP.MinimumWidth = 6;
             this.col_MaSP.Name = "col_MaSP";
-            // 
-            // col_MaKM
-            // 
-            this.col_MaKM.HeaderText = "MaKM";
-            this.col_MaKM.MinimumWidth = 6;
-            this.col_MaKM.Name = "col_MaKM";
             // 
             // UCBanHang
             // 
@@ -745,13 +772,13 @@
         private System.Windows.Forms.TextBox txt_VAT;
         private System.Windows.Forms.TextBox txt_ChietKhau;
         private Guna.UI2.WinForms.Guna2Button btn_TimKH;
+        private Guna.UI2.WinForms.Guna2Button btn_LamMoi;
+        private Guna.UI2.WinForms.Guna2Button btn_Tim;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_TenSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_DonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_SoLuongb;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_KM;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Tong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_VAT;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_MaSP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_MaKM;
     }
 }

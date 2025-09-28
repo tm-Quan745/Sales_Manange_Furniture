@@ -1,4 +1,5 @@
 ﻿using Sales_Manage_Furniture.config;
+using Sales_Manage_Furniture.controllers;
 using Sales_Manange_Furniture.models;
 using System;
 using System.Collections.Generic;
@@ -12,13 +13,23 @@ namespace Sales_Manange_Furniture.controllers
 {
     internal class KhuyenMaiController
     {
-        private DBConnect db = new DBConnect();
+        private LoginController lgCtrl;
+        private string sqlLogin;
+        private string sqlPass;
+        private DBConnect db;
+
+        public KhuyenMaiController(string userName)
+        {
+            lgCtrl = new LoginController();
+            sqlLogin = lgCtrl.GetSqlLogin(userName);
+            sqlPass = lgCtrl.GetSqlPass(userName); // hoặc username tương ứng
+            db = new DBConnect("adminLogin", "123456");
+        }
 
         // Load danh sách khuyến mãi
         public List<KhuyenMai> GetAll()
         {
-            string query = "SELECT * FROM KhuyenMai";
-            DataTable dt = db.ExecuteQuery(query);
+            DataTable dt = db.ExecuteQuery("sp_GetAllKhuyenMai", null, CommandType.StoredProcedure);
 
             List<KhuyenMai> list = new List<KhuyenMai>();
             foreach (DataRow row in dt.Rows)
@@ -41,15 +52,13 @@ namespace Sales_Manange_Furniture.controllers
         public void LoadComboboxes(System.Windows.Forms.ComboBox cbb_ChuongTrinhKM, System.Windows.Forms.ComboBox cbb_SanPham)
         {
             // Load Khuyến mãi
-            string sqlKM = "SELECT MaKM, TenKM FROM KhuyenMai";
-            DataTable dtKM = db.ExecuteQuery(sqlKM);
+            DataTable dtKM = db.ExecuteQuery("EXEC sp_GetKhuyenMaiForCombo");
             cbb_ChuongTrinhKM.DataSource = dtKM;
             cbb_ChuongTrinhKM.DisplayMember = "TenKM";   // hiển thị tên chương trình
             cbb_ChuongTrinhKM.ValueMember = "MaKM";      // giá trị thật là Mã KM
 
             // Load Sản phẩm
-            string sqlSP = "SELECT MaSP, TenSP FROM SanPham";
-            DataTable dtSP = db.ExecuteQuery(sqlSP);
+            DataTable dtSP = db.ExecuteQuery("EXEC sp_GetSanPhamForCombo");
             cbb_SanPham.DataSource = dtSP;
             cbb_SanPham.DisplayMember = "TenSP";     // hiển thị tên sản phẩm
             cbb_SanPham.ValueMember = "MaSP";        // giá trị thật là Mã SP
@@ -58,33 +67,21 @@ namespace Sales_Manange_Furniture.controllers
         // Thêm khuyến mãi
         public int Insert(KhuyenMai km)
         {
-            string query = @"INSERT INTO KhuyenMai (TenKM, MoTa, LoaiKM, GiaTriKM, NgayBatDau, NgayKetThuc)
-                     VALUES (@TenKM, @MoTa, @LoaiKM, @GiaTriKM, @NgayBatDau, @NgayKetThuc)";
-
             var parameters = new[]
-            {
-                new SqlParameter("@TenKM", km.TenKM),
-                new SqlParameter("@MoTa", km.MoTa),
-                new SqlParameter("@LoaiKM", km.LoaiKM),
-                new SqlParameter("@GiaTriKM", km.GiaTriKM),
-                new SqlParameter("@NgayBatDau", km.NgayBatDau),
-                new SqlParameter("@NgayKetThuc", km.NgayKetThuc)
-            };
+         {
+            new SqlParameter("@TenKM", km.TenKM),
+            new SqlParameter("@MoTa", km.MoTa),
+            new SqlParameter("@LoaiKM", km.LoaiKM),
+            new SqlParameter("@GiaTriKM", km.GiaTriKM),
+            new SqlParameter("@NgayBatDau", km.NgayBatDau),
+            new SqlParameter("@NgayKetThuc", km.NgayKetThuc)
+        };
 
-            return db.ExecuteNonQuery(query, parameters);
+            return db.ExecuteNonQuery("sp_InsertKhuyenMai", parameters, CommandType.StoredProcedure);
         }
+
         public int Update(KhuyenMai km)
         {
-            string query = @"UPDATE KhuyenMai
-                     SET TenKM = @TenKM,
-                         MoTa = @MoTa,
-                         LoaiKM = @LoaiKM,
-                         GiaTriKM = @GiaTriKM,
-                         NgayBatDau = @NgayBatDau,
-                         NgayKetThuc = @NgayKetThuc,
-                         TrangThai = @TrangThai
-                     WHERE MaKM = @MaKM";
-
             var parameters = new[]
             {
                 new SqlParameter("@MaKM", km.MaKM),
@@ -97,30 +94,25 @@ namespace Sales_Manange_Furniture.controllers
                 new SqlParameter("@TrangThai", km.TrangThai)
             };
 
-            return db.ExecuteNonQuery(query, parameters);
+            return db.ExecuteNonQuery("sp_UpdateKhuyenMai", parameters, CommandType.StoredProcedure);
         }
         public int Delete(int maKM)
         {
-            string query = "DELETE FROM KhuyenMai WHERE MaKM = @MaKM";
-
             var parameters = new[]
-            {
-                new SqlParameter("@MaKM", maKM)
-            };
+        {
+            new SqlParameter("@MaKM", maKM)
+        };
 
-            return db.ExecuteNonQuery(query, parameters);
+            return db.ExecuteNonQuery("sp_DeleteKhuyenMai", parameters, CommandType.StoredProcedure);
         }
         public DataTable Search(string keyword)
         {
-            string query = @"SELECT * FROM KhuyenMai
-                     WHERE TenKM LIKE @Keyword";
-
             var parameters = new[]
-            {
-                new SqlParameter("@Keyword", "%" + keyword + "%")
-            };
+{
+            new SqlParameter("@Keyword", keyword)
+        };
 
-            return db.ExecuteQuery(query, parameters);
+            return db.ExecuteQuery("sp_SearchKhuyenMai", parameters, CommandType.StoredProcedure);
         }
 
 
